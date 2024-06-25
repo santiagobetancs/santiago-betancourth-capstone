@@ -1,5 +1,7 @@
 # Project Title
 
+StoryTime
+
 ## Overview
 
 My app will be a useful tool to help readers decide on their next book. What it will do is use existing information from famous book review sites to give helpful recommendations based on input provided by the user. It will use a language-learning model to provide descriptive feedback on what you'd like about each recommendation.
@@ -27,21 +29,18 @@ New York Times API, ChatGPT (or other language models), potenitally other book r
 
 ### Sitemap
 
-Here is the figma link:
-
-https://www.figma.com/board/60J0JB5D0g88juKxRkN1S0/Untitled?node-id=0-1&t=2GzVr6tP4ef0A0Kz-1
+![SITEMAP](./src/assets/images/sitemap.png)
 
 ### Mockups
 
-Canva link:
-
-https://www.canva.com/design/DAGJFfWGRM8/1ph5NoPshXJVHMzq0_q-gA/edit?utm_content=DAGJFfWGRM8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+![MOCKUP1](./src/assets/images/mockupOne.png)
+![MOCKUP2](./src/assets/images/mockupTwo.png)
+![MOCKUP3](./src/assets/images/mockupThree.png)
+![MOCKUP4](./src/assets/images/mockupFour.png)
 
 ### Data
 
-Figma link:
-
-https://www.figma.com/board/OucgZoRSGKdjWiKS5Nq8hn/Data-StoryTime?node-id=603-109&t=V7ivhckZIpcb8cSx-1
+![DATA](./src/assets/images/data.png)
 
 ### Endpoints
 

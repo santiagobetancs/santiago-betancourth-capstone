@@ -1,0 +1,19 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.home {
+    background-color: $sunset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+    width: 100vw;
+
+    &__title {
+        // animation: fadeIn linear both;
+        // animation-timeline: view();
+    }
+}
