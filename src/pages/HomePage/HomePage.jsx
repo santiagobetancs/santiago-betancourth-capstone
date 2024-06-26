@@ -2,6 +2,7 @@ import Header from '../../components/Header/Header';
 import MainBlock from '../../components/MainBlock/MainBlock';
 import './HomePage.scss';
 import book from '../../assets/images/book.svg'
+import { Link } from 'react-router-dom'
 
 export default function HomePage() {
     return (
@@ -10,12 +11,6 @@ export default function HomePage() {
             <main className="home">
                 <MainBlock>
                     <div className='home__block'>
-                        {/* <h2 className='home__intro'>
-                            Welcome
-                        </h2> */}
-                        {/* <h4 className='home__prompt'>
-                            Scroll down to find out
-                        </h4> */}
                         <img className='home__book' src={book} alt="book" />
                     </div>
                 </MainBlock>
@@ -25,12 +20,16 @@ export default function HomePage() {
                             <h2 className='home__text home__text--top'>
                                 Let us help you pick your next book
                             </h2>
-                            <h2 className='home__text'>
-                                Log In
-                            </h2>
-                            <h2 className='home__text home__text--bottom'>
-                                Sign Up
-                            </h2>
+                            <Link className='home__text' to='/login'>
+                                <h2>
+                                    Log In
+                                </h2>
+                            </Link>
+                            <Link className='home__text home__text--bottom' to='/signup'>
+                                <h2 >
+                                    Sign Up
+                                </h2>               
+                            </Link>
                         </div>
                     </MainBlock>
                 </div>
