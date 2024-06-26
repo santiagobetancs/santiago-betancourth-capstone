@@ -11,16 +11,20 @@ export default function Header() {
             <h1 className="header__title">StoryTime</h1>
         </Link>
         </div>
-        <div className="header__subheader header__subheader--red">
-            <h3 className="header__subtitle header__subtitle--red">
-                what books await you?
-            </h3>
-        </div>
-        <div className="header__subheader header__subheader--blue">
-            <h3 className="header__subtitle header__subtitle--blue">
-                find your next read
-            </h3>
-        </div>
+        <Link className="link" to='/aboutus' >
+          <div className="header__subheader header__subheader--red">
+              <h3 className="header__subtitle header__subtitle--red">
+                  what books await you?
+              </h3>
+          </div>
+          </Link>
+        <Link className="link" to='/aboutus'>
+          <div className="header__subheader header__subheader--blue">
+              <h3 className="header__subtitle header__subtitle--blue">
+                  find your next read
+              </h3>
+          </div>
+        </Link>
       </nav>
     </>
   );

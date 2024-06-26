@@ -76,9 +76,15 @@
         color: white;
         font-size: 1rem;
         font-style: italic;
+        text-decoration: none;
 
         &--blue {
             color: $night;
+            text-decoration: none;
         }
     }
+}
+
+.link {
+    text-decoration: none;
 }
