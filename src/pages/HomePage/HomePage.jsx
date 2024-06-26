@@ -1,9 +1,11 @@
+import Header from '../../components/Header/Header';
 import MainBlock from '../../components/MainBlock/MainBlock';
 import './HomePage.scss';
 
 export default function HomePage() {
     return (
         <>
+            <Header />
             <main className="home">
                 <MainBlock>
 

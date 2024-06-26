@@ -1,0 +1,91 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: $lavender-blush;
+    padding: 2rem 2rem;
+    align-items: space-between;
+    gap: 15px;
+    align-items: center;
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 10rem;
+    }
+
+    &__shadow {
+        box-shadow: 4px 4px 5px $carolina-blue;
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            width: 16rem;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        color: $rosewood;
+
+        @include tablet {
+            font-size: 4rem;
+            // font-style: italic;
+        }
+    }
+
+    &__book {
+        width: 5rem;
+        height: 3rem;
+        background-color: $azure-web;
+    }
+
+    &__subheader {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            padding: 1rem 2rem;
+        }
+        
+
+
+        &--red {
+            background-color: $rosewood;
+            box-shadow: 4px 4px 5px $rosewood;
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        &--blue {
+            background-color: $azure-web;
+            box-shadow: 4px 4px 5px $rosewood;
+
+            @include tablet {
+                display: none;
+            }
+
+            @include desktop {
+                display: flex;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: white;
+        font-size: 1rem;
+        font-style: italic;
+
+        &--blue {
+            color: $night;
+        }
+    }
+}

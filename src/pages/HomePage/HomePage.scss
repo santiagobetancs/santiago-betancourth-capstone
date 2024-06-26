@@ -5,7 +5,7 @@
 @use '../../styles/partials/variables' as *;
 
 .home {
-    background-color: $sunset;
+    background-color: $lavender-blush;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,6 @@
     width: 100vw;
 
     &__title {
-        // animation: fadeIn linear both;
-        // animation-timeline: view();
+
     }
 }
