@@ -22,11 +22,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        // height: 95%;
 
         @include tablet {
             width: 80%;
-            // height: 70vh;
         }
 
         @include desktop {
@@ -39,7 +37,6 @@
         height: 90%;
         background-color: white;
         display: flex;
-        // flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
