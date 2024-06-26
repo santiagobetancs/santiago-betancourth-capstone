@@ -1,24 +1,13 @@
+@use './variables' as *;
+
 body {
     font-family: 'Playfair';
     font-weight: 400;
     font-style: normal
 }
 
-// @keyframes increaseSize {
-//     0%  { width: 0%; height: 0vh; }
-//     25%  { width: 25%; height: 25vh; }
-//     50%  { width: 50%; height: 50vh; }
-//     75%  { width: 75%; height: 75vh; }
-//     100%  { width: 100%; height: 50%; }
-// }
-
-// @keyframes fadeIn {
-//     from {
-//         opacity: 0;
-//         // clip-path: inset(45% 20% 45% 20%);
-//     }
-//     50% {
-//         opacity: 1;
-//         // clip-path: inset(0% 0% 0% 0%);
-//     }
-// }
+@keyframes scroll {
+    0% {width: 50%; height: 30vh; background-color: $lavender-blush;}
+    50% {background-color: $rose-quartz;}
+    100% {width: 100%; height: 125vh; background-image: url('../../assets/images/starry-night.jpeg');}
+}

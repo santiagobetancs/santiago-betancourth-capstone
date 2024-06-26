@@ -1,5 +1,5 @@
 import "./Header.scss";
-import book from '../../assets/images/book.svg'
+
 
 export default function Header() {
   return (
@@ -10,12 +10,12 @@ export default function Header() {
         </div>
         <div className="header__subheader header__subheader--red">
             <h3 className="header__subtitle header__subtitle--red">
-                where shall we go?
+                what books await you?
             </h3>
         </div>
         <div className="header__subheader header__subheader--blue">
             <h3 className="header__subtitle header__subtitle--blue">
-                click here to find out
+                find your next read
             </h3>
         </div>
       </nav>

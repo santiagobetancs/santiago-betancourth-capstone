@@ -5,14 +5,88 @@
 @use '../../styles/partials/variables' as *;
 
 .home {
-    background-color: $lavender-blush;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200vh;
-    width: 100vw;
+    justify-content: flex-start;
+    padding: 0rem 0;
+    background-color: $lavender-blush;
+    height: 150vh;
 
-    &__title {
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
 
+        &--scroll {
+            background-image: url('../../assets/images/starry-night.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 2rem;
+            animation-name: scroll;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &__scroll {
+        width: 100%;
+    }
+
+    &__intro {
+        font-size: 1rem;
+        background-color: $carolina-blue;
+        color: white;
+        box-shadow: 4px 4px 5px $rosewood;
+        padding: 0.25rem 0.25rem;
+    }
+
+    &__prompt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        width: 100%;
+        height: 100vh;
+        font-style: italic;
+    }
+
+    &__text {
+        background-color: $lavender-blush;
+        padding: 0.5rem 1rem;
+        border: 0.5px solid black;
+        box-shadow: 4px 4px 5px white;
+        margin: 0;
+
+        &--top {
+            background-color: $night;
+            border: 0.5px solid white;
+            box-shadow: 4px 4px 5px $rosewood;
+            color: $lavender-blush;
+        }
+
+        &--bottom {
+            color: $lavender-blush;
+            border: 0.5px solid white;
+            background-color: $night;
+            box-shadow: 4px 4px 5px white;
+        }
+    }
+
+    &__book {
+        width: 10rem;
+        height: 20rem;
+
+        @include tablet {
+            width: 15rem;
+            height: 30rem;
+        }
+
+        @include desktop {
+            width: 20rem;
+            height: 40rem;
+        }
     }
 }
