@@ -5,13 +5,7 @@
 @use '../../styles/partials/variables' as *;
 
 .block {
-    // border-top: 1px solid $carolina-blue;
-    // border-bottom: 1px solid $carolina-blue;
     border-radius: 0.25rem;
     background-color: $lavender-blush;
     width: 100%;
-
-    &__internal {
-
-    }
 }

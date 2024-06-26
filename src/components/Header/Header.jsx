@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { Link } from 'react-router-dom'
 
 
 export default function Header() {
@@ -6,7 +7,9 @@ export default function Header() {
     <>
       <nav className="header">
         <div className="header__shadow">
+        <Link className="header__link" to='/'>
             <h1 className="header__title">StoryTime</h1>
+        </Link>
         </div>
         <div className="header__subheader header__subheader--red">
             <h3 className="header__subtitle header__subtitle--red">
