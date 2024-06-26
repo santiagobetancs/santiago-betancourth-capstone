@@ -12,6 +12,8 @@
     align-items: space-between;
     gap: 15px;
     align-items: center;
+    // border-bottom: 3px solid $azure-web;
+    box-shadow: 4px 4px 5px $night;
 
     @include desktop {
         flex-direction: row;
