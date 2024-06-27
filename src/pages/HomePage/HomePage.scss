@@ -75,6 +75,20 @@
             background-color: $night;
             box-shadow: 4px 4px 5px white;
         }
+
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tab {
+            display: none;
+            
+            @include tablet {
+                display: flex;
+            }
+        }
     }
 
     &__book {
