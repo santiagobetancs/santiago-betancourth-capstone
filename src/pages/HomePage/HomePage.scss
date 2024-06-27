@@ -41,7 +41,11 @@
         align-items: center;
         margin-bottom: 3rem;
         text-align: center;
-        width: 90%;
+        width: 60%;
+
+        @include tablet {
+            width: 80%;
+        }
     }
 
     &__image {
@@ -58,6 +62,10 @@
         display: flex;
         justify-content: center;
         color: $rosewood;
+        background-color: $lavender-blush;
+        box-shadow: 4px 4px 5px $rosewood;
+        padding: 1rem 2rem;
+        border: 2px solid $carolina-blue;
 
         @include tablet {
             font-size: 1.75rem

@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage/LoginPage"
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
 import SignupPage from "../pages/SignupPage/SignupPage"
 import HomePage from "../pages/HomePage/HomePage"
+import ProfilePage from "../pages/ProfilePage/ProfilePage"
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         name: "home",
         path: '/home/:id',
         component: HomePage
+    },
+    {
+        name: "profile",
+        path: 'profile/:id',
+        component: ProfilePage
     },
     {
         name: "404",
