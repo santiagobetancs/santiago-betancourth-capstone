@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import './AboutUsPage.scss'
 import { Link } from 'react-router-dom'
@@ -21,6 +22,7 @@ export default function AboutUsPage() {
                     </Link>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

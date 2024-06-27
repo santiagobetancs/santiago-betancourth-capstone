@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import MainBlock from "../../components/MainBlock/MainBlock";
 import './LoginPage.scss'
@@ -21,9 +22,9 @@ export default function LoginPage() {
                         LOGIN
                         </button>
                     </div>
-
                 </section>
             </form>
+            <Footer />
         </>
     )
 }
