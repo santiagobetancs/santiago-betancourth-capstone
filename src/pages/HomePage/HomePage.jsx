@@ -3,6 +3,7 @@ import './HomePage.scss'
 import abel from '../../assets/images/abel.png'
 import prince from '../../assets/images/prince.jpg'
 import { Link } from 'react-router-dom'
+import Footer from "../../components/Footer/Footer";
 
 export default function HomePage() {
     return (
@@ -21,6 +22,7 @@ export default function HomePage() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     )
 }

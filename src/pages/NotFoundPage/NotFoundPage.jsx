@@ -2,6 +2,7 @@ import Header from "../../components/Header/Header";
 import './NotFoundPage.scss'
 import book from '../../assets/images/book.svg'
 import { Link } from 'react-router-dom'
+import Footer from "../../components/Footer/Footer";
 
 export default function NotFoundPage() {
     return (
@@ -18,6 +19,7 @@ export default function NotFoundPage() {
                     </h2>         
                 </Link>
             </main>
+            <Footer />
         </>
     )
 }
