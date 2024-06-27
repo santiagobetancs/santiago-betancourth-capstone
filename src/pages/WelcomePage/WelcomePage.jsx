@@ -1,6 +1,6 @@
 import Header from '../../components/Header/Header';
 import MainBlock from '../../components/MainBlock/MainBlock';
-import './HomePage.scss';
+import './WelcomePage.scss';
 import book from '../../assets/images/book.svg'
 import { Link } from 'react-router-dom'
 
