@@ -1,0 +1,66 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 5rem 0;
+
+    &__title {
+        margin: 2rem 1rem;
+        overflow-wrap: break-word;
+        text-align: center;
+
+        @include tablet {
+            font-size: 3rem;
+        }
+    }
+
+    &__options {
+        width: 90%;
+        background-color: $lavender-blush;
+        padding: 4rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.25rem;
+        border: 10px solid $rosewood;
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        text-align: center;
+        width: 90%;
+    }
+
+    &__image {
+        border-radius: 50%;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            width: 70%;
+        }
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        color: $rosewood;
+
+        @include tablet {
+            font-size: 1.75rem
+        }
+    }
+}

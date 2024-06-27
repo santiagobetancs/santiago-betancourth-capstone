@@ -3,10 +3,11 @@ import WelcomePage from "../pages/WelcomePage/WelcomePage"
 import LoginPage from "../pages/LoginPage/LoginPage"
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
 import SignupPage from "../pages/SignupPage/SignupPage"
+import HomePage from "../pages/HomePage/HomePage"
 
 const routes = [
     {
-        name: "home",
+        name: "welcome",
         path: "/",
         component: WelcomePage
     },
@@ -24,6 +25,11 @@ const routes = [
         name: "about-us",
         path: '/aboutus',
         component: AboutUsPage
+    },
+    {
+        name: "home",
+        path: '/home/:id',
+        component: HomePage
     },
     {
         name: "404",
