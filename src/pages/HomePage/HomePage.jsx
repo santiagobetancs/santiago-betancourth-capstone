@@ -17,7 +17,10 @@ export default function HomePage() {
                 <div data-aos="fade-up" className='home__scroll'>
                     <MainBlock>
                         <div className='home__block home__block--scroll'>
-                            <h2 className='home__text home__text--top'>
+                            <h2 className='home__text home__text--top home__text--mobile'>
+                                Pick your next book
+                            </h2>
+                            <h2 className='home__text home__text--top home__text--tab'>
                                 Let us help you pick your next book
                             </h2>
                             <Link className='home__text' to='/login'>
