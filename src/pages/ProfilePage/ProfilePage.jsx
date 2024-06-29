@@ -1,57 +1,60 @@
-import './ProfilePage.scss'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+import "./ProfilePage.scss";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import abel from "../../assets/images/abel.png";
+import books from "../../books/books";
 
 export default function ProfilePage() {
-    return (
-        <>
-            <Header />
-            <main className='profile'>
-                <section className='profile__container'>
-                    <div className='profile__details'>
-                        <img className='profile__image' src="#" alt="profile_image" />
-                        <div className='profile__box'>
-                            <label className='profile__label'>
-                                Username
-                            </label>
-                            <h3 className='profile__text'>
-                                [username]
-                            </h3>
-                        </div>
-                        <div className='profile__box'>
-                            <label className='profile__label'>
-                                Name
-                            </label>
-                            <h3 className='profile__text'>
-                                [Full Name]
-                            </h3>
-                        </div>
-                        <div className='profile__box'>
-                            <label className='profile__label'>
-                                email
-                            </label>
-                            <h3 className='profile__text'>
-                                [email]
-                            </h3>
-                        </div>
-                    </div>
-                    <div className='profile__likes'>
-                        <img className='profile__like-image' src="#" alt="liked-books" />
-                        <h3 className='profile__like-text'>
-                            Liked Books
-                        </h3>
-                    </div>
-                    <div className='profile__buttons'>
-                        <h3 className='profile__button profile__button--edit'>
-                            EDIT
-                        </h3>
-                        <h3 className='profile__button profile__button--home'>
-                            HOME
-                        </h3>
-                    </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="profile">
+        <section className="profile__container">
+          <div className="profile__details">
+            <img className="profile__image" src={abel} alt="profile_image" />
+            <div className="profile__box">
+              <label className="profile__label">Username</label>
+              <h3 className="profile__text">[username]</h3>
+            </div>
+            <div className="profile__box">
+              <label className="profile__label">Name</label>
+              <h3 className="profile__text">[Full Name]</h3>
+            </div>
+            <div className="profile__box">
+              <label className="profile__label">email</label>
+              <h3 className="profile__text">[email]</h3>
+            </div>
+          </div>
+          <div className="profile__likes">
+            <h3 className="profile__like-text">Liked Books</h3>
+            {books.slice(0, 2).map((book) => {
+              return (
+                <div className="profile__like-box">
+                  <img
+                    className="profile__like-image"
+                    src={book.img}
+                    alt="liked-books"
+                  />
+                  <h6>{book.title}</h6>
+                </div>
+              );
+            })}
+            <div className="profile__like-box">
+              <div className="profile__like-blank">
+
+              </div>
+              <h6>
+                See more...
+              </h6>
+            </div>
+          </div>
+          <div className="profile__buttons">
+            <h3 className="profile__button profile__button--edit">EDIT</h3>
+            <h3 className="profile__button profile__button--home">HOME</h3>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }

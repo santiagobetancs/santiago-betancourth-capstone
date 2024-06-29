@@ -25,7 +25,7 @@ export default function WelcomePage() {
                             <h2 className='welcome__text welcome__text--top welcome__text--tab'>
                                 Let us help you pick your next book
                             </h2>
-                            <Link className='welcome__text' to='/login'>
+                            <Link className='welcome__text welcome__text--login' to='/login'>
                                 <h2>
                                     Log In
                                 </h2>

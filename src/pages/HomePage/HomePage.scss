@@ -41,7 +41,7 @@
         align-items: center;
         margin-bottom: 3rem;
         text-align: center;
-        width: 60%;
+        width: 100%;
 
         @include tablet {
             width: 80%;
@@ -64,11 +64,12 @@
         color: $rosewood;
         background-color: $lavender-blush;
         box-shadow: 4px 4px 5px $rosewood;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border: 2px solid $carolina-blue;
 
         @include tablet {
-            font-size: 1.75rem
+            font-size: 1.75rem;
+            padding: 1rem 2rem;
         }
     }
 }
