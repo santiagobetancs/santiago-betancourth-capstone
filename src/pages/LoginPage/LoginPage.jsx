@@ -31,8 +31,8 @@ export default function LoginPage() {
             e.preventDefault()
             const result = await axios.post("http://localhost:8080/users/login", user)
             if (result) {
-                navigate(`/profile/${result.data.username}`)
-            console.log(result)
+                sessionStorage.setItem("token", result.data.token)
+                navigate(`/home/${result.data.username}`)
             }
         } catch (err) {
             console.error(err)

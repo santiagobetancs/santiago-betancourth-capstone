@@ -3,10 +3,11 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import abel from "../../assets/images/abel.png";
 import books from "../../books/books";
+import { useParams } from "react-router-dom"; 
 
 export default function ProfilePage() {
 
-  
+  const { id } = useParams()
 
   return (
     <>
@@ -17,7 +18,7 @@ export default function ProfilePage() {
             <img className="profile__image" src={abel} alt="profile_image" />
             <div className="profile__box">
               <label className="profile__label">Username</label>
-              <h3 className="profile__text">[username]</h3>
+              <h3 className="profile__text">{id}</h3>
             </div>
             <div className="profile__box">
               <label className="profile__label">Name</label>
