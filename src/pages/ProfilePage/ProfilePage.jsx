@@ -5,6 +5,9 @@ import abel from "../../assets/images/abel.png";
 import books from "../../books/books";
 
 export default function ProfilePage() {
+
+  
+
   return (
     <>
       <Header />
@@ -29,7 +32,7 @@ export default function ProfilePage() {
             <h3 className="profile__like-text">Liked Books</h3>
             {books.slice(0, 2).map((book) => {
               return (
-                <div className="profile__like-box">
+                <div key={book.title} className="profile__like-box">
                   <img
                     className="profile__like-image"
                     src={book.img}
