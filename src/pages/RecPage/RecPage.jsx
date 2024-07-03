@@ -4,12 +4,18 @@ import './RecPage.scss'
 import categories from '../../categories/categories'
 import axios from 'axios'
 import { useState } from 'react' 
+import { useParams } from 'react-router-dom'
+import React from 'react'
+import BookCard from '../../components/BookCard/BookCard'
 
 
 export default function RecPage() {
     
+    const { id } = useParams()
     const apiKey = "shVlTVz1U2fJIR3OCfRNXPOjExf7vM1k"
     const [books, setBooks] = useState()
+
+
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -27,6 +33,8 @@ export default function RecPage() {
     }
 
 
+
+
     return (
         <>
             <Header />
@@ -41,7 +49,7 @@ export default function RecPage() {
                                 Select a category!
                             </option>
                             {categories.map((cat) => {
-                                const { list_name, display_name, list_name_encoded } = cat
+                                const { list_name, list_name_encoded } = cat
                                 return (
                                     <option name="list_name" className='rec__option' key={list_name} value={list_name_encoded}>
                                             {list_name}
@@ -57,14 +65,9 @@ export default function RecPage() {
                 {books && (
                     <div className='rec__recs'>
                         {books.data.body.slice(0, 3).map((book) => {
-                            const { title, book_image } = book.book_details[0]
+                            const { title, book_image, author, amazon_product_url, description } = book.book_details[0]
                             return (
-                                <div key={title} className='rec__div'>
-                                    <img className='rec__img' src={book_image} alt="img" />
-                                    <h4 className='rec__subtitle'>
-                                        {title}
-                                    </h4>
-                                </div>
+                                <BookCard title={title} book_image={book_image} author={author} amazon_product_url={amazon_product_url} description={description} />
                             )
                         })}
                     </div>
