@@ -73,6 +73,27 @@
             border: 0.5px solid white;
             background-color: $night;
             box-shadow: 4px 4px 5px white;
+
+            &:hover {
+                background-color: $lavender-blush;
+                border: 0.5px solid black;
+                box-shadow: 4px 4px 5px white;
+                color: black;
+            }
+        }
+
+        &--login {
+            background-color: $lavender-blush;
+            border: 0.5px solid black;
+            box-shadow: 4px 4px 5px white;
+            color: black;
+
+            &:hover {
+                color: $lavender-blush;
+                border: 0.5px solid white;
+                background-color: $night;
+                box-shadow: 4px 4px 5px white;
+            }
         }
 
         &--mobile {
@@ -94,14 +115,32 @@
         width: 10rem;
         height: 20rem;
 
+        
         @include tablet {
             width: 15rem;
             height: 30rem;
         }
-
+        
         @include desktop {
             width: 20rem;
             height: 40rem;
         }
+
+        // &:hover {
+        //     animation-name: size ;
+        //     animation-duration: 1s;
+            // width: 12.5rem;
+            // height: 25rem;
+    
+            // @include tablet {
+            //     width: 17.5rem;
+            //     height: 35rem;
+            // }
+    
+            // @include desktop {
+            //     width: 22.5rem;
+            //     height: 45rem;
+            // }
+        // }
     }
 }

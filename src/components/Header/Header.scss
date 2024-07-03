@@ -12,7 +12,6 @@
     align-items: space-between;
     gap: 15px;
     align-items: center;
-    // border-bottom: 3px solid $azure-web;
     box-shadow: 4px 4px 5px $night;
 
     @include desktop {
@@ -69,6 +68,12 @@
             @include desktop {
                 display: flex;
             }
+
+            &:hover {
+                background-color: $rosewood;
+                box-shadow: 4px 4px 5px $sunset;
+                
+            }
         }
     }
 
@@ -81,6 +86,10 @@
         &--blue {
             color: $night;
             text-decoration: none;
+
+            &:hover {
+                color: white;
+            }
         }
     }
 }

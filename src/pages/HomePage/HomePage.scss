@@ -41,7 +41,11 @@
         align-items: center;
         margin-bottom: 3rem;
         text-align: center;
-        width: 90%;
+        width: 100%;
+
+        @include tablet {
+            width: 80%;
+        }
     }
 
     &__image {
@@ -58,9 +62,18 @@
         display: flex;
         justify-content: center;
         color: $rosewood;
+        background-color: $lavender-blush;
+        box-shadow: 4px 4px 5px $rosewood;
+        padding: 0.5rem 1rem;
+        border: 2px solid $carolina-blue;
 
         @include tablet {
-            font-size: 1.75rem
+            font-size: 1.75rem;
+            padding: 1rem 2rem;
         }
+    }
+
+    &__link {
+        text-decoration: none;
     }
 }

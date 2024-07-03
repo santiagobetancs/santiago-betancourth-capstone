@@ -1,0 +1,75 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.rec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+
+    &__form {
+        background-color: $lavender-blush;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+        box-shadow: 4px 4px 5px black;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $rosewood;
+        text-align: center;
+    }
+
+    &__select {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    &__button {
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        background-color: $rosewood;
+        color: white;
+        box-shadow: 4px 4px 5px $sunset;
+    }
+
+    &__recs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        background-color: $lavender-blush; 
+        box-shadow: 4px 4px 5px black;
+    }
+
+    &__div {
+        padding: 2rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+}
