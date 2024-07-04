@@ -4,22 +4,19 @@ import './RecPage.scss'
 import categories from '../../categories/categories'
 import axios from 'axios'
 import { useState } from 'react' 
-import { useParams } from 'react-router-dom'
 import React from 'react'
 import BookCard from '../../components/BookCard/BookCard'
 
 
 export default function RecPage() {
-    
-    const { id } = useParams()
-    const apiKey = "shVlTVz1U2fJIR3OCfRNXPOjExf7vM1k"
+
     const [books, setBooks] = useState()
 
 
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        const result = await axios.get(`https://api.nytimes.com/svc/books/lists/current/${e.target.list_name.value}.json?api-key=${apiKey}`)
+        const result = await axios.get(`http://localhost:8080/users/nyt/${e.target.list_name.value}`)
         setBooks(result)
     }
     
@@ -31,9 +28,6 @@ export default function RecPage() {
         const array = books.data.body
         const shuffledArray = shuffle(array); 
     }
-
-
-
 
     return (
         <>

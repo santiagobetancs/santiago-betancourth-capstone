@@ -2,13 +2,31 @@ import "./ProfilePage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import abel from "../../assets/images/abel.png";
-import books from "../../books/books";
 import { useParams } from "react-router-dom"; 
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function ProfilePage() {
 
   const { id } = useParams()
+  const [profile, setProfile] = useState()
+  const [books, setBooks] = useState({data: []})
 
+
+  useEffect(() => {
+    // const getProfile = async () => {
+    //   const result = await axios.get(`http://localhost:8080/indiv/${id}`)
+    //   setProfile(result)
+    // }
+    // console.log(getProfile())
+
+    const getBooks = async () => {
+      const result = await axios.get(`http://localhost:8080/users/books/${id}`);
+      setBooks(result)
+    }
+    getBooks()
+  }, [])
+  
   return (
     <>
       <Header />
@@ -31,12 +49,12 @@ export default function ProfilePage() {
           </div>
           <div className="profile__likes">
             <h3 className="profile__like-text">Liked Books</h3>
-            {books.slice(0, 2).map((book) => {
+            {books.data.map((book) => {
               return (
                 <div key={book.title} className="profile__like-box">
                   <img
                     className="profile__like-image"
-                    src={book.img}
+                    src={book.book_image}
                     alt="liked-books"
                   />
                   <h6>{book.title}</h6>

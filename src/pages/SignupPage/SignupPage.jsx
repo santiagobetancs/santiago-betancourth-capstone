@@ -27,7 +27,6 @@ export default function SignupPage() {
             console.error(err)
         }
     }
-    console.log(user)
 
     const onSubmit = async (e) => {
         try {
@@ -38,6 +37,7 @@ export default function SignupPage() {
             console.error(err)
         }
     }
+    console.log(user)
 
     return (
         <>

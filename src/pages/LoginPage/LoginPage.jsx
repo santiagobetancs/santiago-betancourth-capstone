@@ -25,6 +25,7 @@ export default function LoginPage() {
             console.error(err)
         }
     }
+    console.log(user)
 
     const onSubmit = async (e) => {
         try {

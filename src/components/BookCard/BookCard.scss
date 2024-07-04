@@ -32,7 +32,20 @@
         box-shadow: 4px 4px 5px $sunset;
     }
 
+    &__block {
+        display: flex;
+        gap: 20px;
+    }
+
     &__link {
         text-decoration: none;
+    }
+
+    &__heart {
+        width: 2rem;
+
+        &--none {
+            display: none;
+        }
     }
 }
