@@ -5,20 +5,22 @@ import abel from "../../assets/images/abel.png";
 import { useParams } from "react-router-dom"; 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ModalComponent from "../../components/ModalComponen/ModalComponent";
 
 export default function ProfilePage() {
 
   const { id } = useParams()
-  const [profile, setProfile] = useState()
+  const [profile, setProfile] = useState({data: []})
   const [books, setBooks] = useState({data: []})
+  const [openModal, setOpenModal] = useState(false)
 
 
   useEffect(() => {
-    // const getProfile = async () => {
-    //   const result = await axios.get(`http://localhost:8080/indiv/${id}`)
-    //   setProfile(result)
-    // }
-    // console.log(getProfile())
+    const getProfile = async () => {
+      const result = await axios.get(`http://localhost:8080/users/indiv/${id}`)
+      setProfile(result.data)
+    }
+    getProfile()
 
     const getBooks = async () => {
       const result = await axios.get(`http://localhost:8080/users/books/${id}`);
@@ -26,9 +28,17 @@ export default function ProfilePage() {
     }
     getBooks()
   }, [])
+
+  const { first_name, last_name, email } = profile
+  console.log(profile)
+
+  if (!profile) {
+    return <p>Loading...</p>
+  }
   
   return (
     <>
+      <ModalComponent setOpenModal={setOpenModal} openModal={openModal}/>
       <Header />
       <main className="profile">
         <section className="profile__container">
@@ -40,11 +50,11 @@ export default function ProfilePage() {
             </div>
             <div className="profile__box">
               <label className="profile__label">Name</label>
-              <h3 className="profile__text">[Full Name]</h3>
+              <h3 className="profile__text">{`${first_name} ${last_name}`}</h3>
             </div>
             <div className="profile__box">
               <label className="profile__label">email</label>
-              <h3 className="profile__text">[email]</h3>
+              <h3 className="profile__text">{email}</h3>
             </div>
           </div>
           <div className="profile__likes">
@@ -71,7 +81,10 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="profile__buttons">
-            <h3 className="profile__button profile__button--edit">EDIT</h3>
+            <button onClick={() => {
+              setOpenModal(true)
+            }}
+            className="profile__button profile__button--edit">EDIT</button>
             <h3 className="profile__button profile__button--home">HOME</h3>
           </div>
         </section>
