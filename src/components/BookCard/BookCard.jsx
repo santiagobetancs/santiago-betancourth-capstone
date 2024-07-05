@@ -16,7 +16,8 @@ export default function BookCard({
   const [cmore, setCmore] = useState(false);
   const [liked, setLiked] = useState(false);
   const [remove, setRemove] = useState(false);
-  const [click, setClick] = useState(false)
+  const [click, setClick] = useState(false);
+  const [recommendation, setRecommendation] = useState()
 
   const onClick = (e) => {
     e.preventDefault();
@@ -30,6 +31,25 @@ export default function BookCard({
   };
 
   useEffect(() => {
+    const chatGpt = async () => {
+      const content = await axios.post(
+        `https://api.openai.com/v1/chat/completions`,
+        {
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: `Tell me why should I read ${title} by ${author}, in two lines` }],
+        },
+        {
+          headers: {
+            Authorization: `Bearer sk-proj-xbcDJNv46oHriuDGKTpRT3BlbkFJNGrfgS2AFrJMAhOfJgNn`,
+          },
+        }
+      );
+      setRecommendation(content.data.choices[0].message.content)
+    };
+    chatGpt();
+  }, [])
+
+  useEffect(() => {
     const sendBook = async () => {
       const obj = {
         title: title,
@@ -37,7 +57,8 @@ export default function BookCard({
         description: description,
         book_image: book_image,
         amazon_product_url: amazon_product_url,
-        username: id,
+        recommendation: recommendation,
+        username: id
       };
       try {
         if (liked === true) {
@@ -94,6 +115,7 @@ export default function BookCard({
         <>
           <h4 className="rec__subtitle">{author}</h4>
           <h4>{description}</h4>
+          <p>{recommendation}</p>
           <a href={amazon_product_url}>
             <h4>Find it on Amazon!</h4>
           </a>

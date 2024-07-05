@@ -3,8 +3,11 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignupPage() {
+
+    const navigate = useNavigate()
 
     const [user, setUser] = useState({
         first_name: "",
@@ -67,7 +70,7 @@ export default function SignupPage() {
                         </div>
                         <div className="signup__div">
                             <label className="signup__label">Sign-up</label>
-                            <button type="submit" className="signup__button">
+                            <button  type="submit" className="signup__button">
                                 Submit
                             </button>
                         </div>

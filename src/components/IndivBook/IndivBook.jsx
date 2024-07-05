@@ -7,7 +7,8 @@ export default function IndivBook({
   book_image,
   description,
   setRender,
-  render
+  render,
+  recommendation
 }) {
   const [remove, setRemove] = useState(false);
   const { id } = useParams()
@@ -41,6 +42,7 @@ export default function IndivBook({
       <img className="profile__like-image" src={book_image} alt="liked-books" />
       <h6>{title}</h6>
       <h6>{description}</h6>
+      <h6>{recommendation}</h6>
       <h4 onClick={removeLike}>X</h4>
     </div>
   );

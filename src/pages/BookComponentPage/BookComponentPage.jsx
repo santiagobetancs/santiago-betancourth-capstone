@@ -33,6 +33,7 @@ export default function BookComponentPage() {
                 title={book.title}
                 book_image={book.book_image}
                 description={book.description}
+                recommendation={book.recommendation}
               />
             );
           })}
