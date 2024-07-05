@@ -6,9 +6,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalComponent from "../../components/ModalComponen/ModalComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
 
+  const navigate = useNavigate()
   const { id } = useParams()
   const [profile, setProfile] = useState({data: []})
   const [books, setBooks] = useState({data: []})
@@ -27,18 +29,13 @@ export default function ProfilePage() {
       setBooks(result)
     }
     getBooks()
-  }, [])
+  }, [id, openModal])
 
   const { first_name, last_name, email } = profile
-  console.log(profile)
-
-  if (!profile) {
-    return <p>Loading...</p>
-  }
   
   return (
     <>
-      <ModalComponent setOpenModal={setOpenModal} openModal={openModal}/>
+      <ModalComponent profile={profile} setOpenModal={setOpenModal} openModal={openModal}/>
       <Header />
       <main className="profile">
         <section className="profile__container">
@@ -59,7 +56,7 @@ export default function ProfilePage() {
           </div>
           <div className="profile__likes">
             <h3 className="profile__like-text">Liked Books</h3>
-            {books.data.map((book) => {
+            {books.data.slice(0, 2).map((book) => {
               return (
                 <div key={book.title} className="profile__like-box">
                   <img
@@ -75,7 +72,7 @@ export default function ProfilePage() {
               <div className="profile__like-blank">
 
               </div>
-              <h6>
+              <h6 onClick={() => navigate(`/profile/books/${id}`)}>
                 See more...
               </h6>
             </div>

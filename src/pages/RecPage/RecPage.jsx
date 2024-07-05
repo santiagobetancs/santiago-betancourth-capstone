@@ -12,8 +12,6 @@ export default function RecPage() {
 
     const [books, setBooks] = useState()
 
-
-
     const onSubmit = async (e) => {
         e.preventDefault()
         const result = await axios.get(`http://localhost:8080/users/nyt/${e.target.list_name.value}`)

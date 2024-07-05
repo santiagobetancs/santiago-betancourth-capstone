@@ -7,6 +7,7 @@ import HomePage from "../pages/HomePage/HomePage"
 import ProfilePage from "../pages/ProfilePage/ProfilePage"
 import RecPage from "../pages/RecPage/RecPage"
 import BookPage from "../pages/BookPage/BookPage"
+import BookComponentPage from "../pages/BookComponentPage/BookComponentPage"
 
 const routes = [
     {
@@ -48,6 +49,11 @@ const routes = [
         name: "books",
         path: "recommendations/:id/:book",
         component: BookPage
+    },
+    {
+        name: "indivbooks",
+        path: "profile/books/:id",
+        component: BookComponentPage
     },
     {
         name: "404",
