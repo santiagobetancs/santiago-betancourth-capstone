@@ -22,13 +22,13 @@
 
     &__options {
         width: 90%;
-        background-color: $lavender-blush;
+        // background-color: $lavender-blush;
         padding: 4rem 2rem 2rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 0.25rem;
-        border: 10px solid $rosewood;
+        // border: 10px solid $rosewood;
 
         @include desktop {
             flex-direction: row;
@@ -61,11 +61,11 @@
     &__subtitle {
         display: flex;
         justify-content: center;
-        color: $rosewood;
-        background-color: $lavender-blush;
-        box-shadow: 4px 4px 5px $rosewood;
+        // color: $rosewood;
+        // background-color: $lavender-blush;
+        // box-shadow: 4px 4px 5px $rosewood;
         padding: 0.5rem 1rem;
-        border: 2px solid $carolina-blue;
+        // border: 2px solid $carolina-blue;
 
         @include tablet {
             font-size: 1.75rem;

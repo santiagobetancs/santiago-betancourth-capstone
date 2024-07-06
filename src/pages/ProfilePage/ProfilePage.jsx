@@ -13,7 +13,7 @@ export default function ProfilePage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [profile, setProfile] = useState({ data: [] });
-  const [books, setBooks] = useState({ data: [] });
+  const [books, setBooks] = useState({data: []});
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {

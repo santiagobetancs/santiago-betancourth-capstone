@@ -5,142 +5,175 @@
 @use '../../styles/partials/variables' as *;
 
 .welcome {
+   padding: 0 2rem; 
+
+   &__banner {
+    background-color: $light-copper;
+    display: flex;
+    height: 360px;
+   }
+
+   &__hero {
+    width: 50%;
+    height: 100%;
+   }
+
+   &__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0rem 0;
-    height: 150vh;
+    justify-content: center;
+    width: 50%;
+   }
 
-    &__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
+   &__image {
+    width: 160px;
+   }
 
-        &--scroll {
-            background-image: url('../../assets/images/starry-night.jpeg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 2rem;
-            animation-name: scroll;
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-        }
+   &__title {
+    color: $brown;
+    font-weight: 500;
+    font-size: 24px;
+   }
+
+   &__carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+   }
+
+   &__tagline {
+    display: flex;
+    width: 80%;
+    gap: 10px;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+   }
+
+   &__heading {
+    color: $brown;
+    font-size: 24px;
+    font-weight: 500;
+   }
+
+   &__button {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: $orange;
+    font-weight: 400;
+    padding: 0.25rem 0;
+    border-radius: 1rem;
+    white-space: no-wrap;
+    overflow: hidden;
+    font-size: 14px;
+    width: 6rem;
+   }
+
+   &__line {
+    width: 35%;
+
+    &--bottom {
+        width: 60%;
     }
+   }
 
-    &__scroll {
-        width: 100%;
-    }
+   &__link {
+    text-decoration: none;
+   }
 
-    &__intro {
-        font-size: 1rem;
-        background-color: $carolina-blue;
-        color: white;
-        box-shadow: 4px 4px 5px $rosewood;
-        padding: 0.25rem 0.25rem;
-    }
+   &__slideshow {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+   }
 
-    &__prompt {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        width: 100%;
-        height: 100vh;
-        font-style: italic;
-    }
+   &__slide {
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid lightgray;
+    min-width: 250px;
+    padding: 0rem 0.25rem;
+   }
 
-    &__text {
-        background-color: $lavender-blush;
-        padding: 0.5rem 1rem;
-        border: 0.5px solid black;
-        box-shadow: 4px 4px 5px white;
-        margin: 0;
-        text-decoration: none;
-        color: black;
+   &__mage {
+    width: 80%;
+    border-radius: 1rem;
+   }
 
-        &--top {
-            background-color: $night;
-            border: 0.5px solid white;
-            box-shadow: 4px 4px 5px $rosewood;
-            color: $lavender-blush;
-        }
+   &__trending {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: $light-copper;
+    margin-bottom: 2rem;
+   }
 
-        &--bottom {
-            color: $lavender-blush;
-            border: 0.5px solid white;
-            background-color: $night;
-            box-shadow: 4px 4px 5px white;
+   &__fire {
+    width: 3.5rem;
+   }
 
-            &:hover {
-                background-color: $lavender-blush;
-                border: 0.5px solid black;
-                box-shadow: 4px 4px 5px white;
-                color: black;
-            }
-        }
+   &__recommends {
+    display: flex;
+    justify-content: center;
+   }
 
-        &--login {
-            background-color: $lavender-blush;
-            border: 0.5px solid black;
-            box-shadow: 4px 4px 5px white;
-            color: black;
+   &__books {
+    display: flex;
+    flex-wrap: wrap;
+    width: 37.5%;
+   }
 
-            &:hover {
-                color: $lavender-blush;
-                border: 0.5px solid white;
-                background-color: $night;
-                box-shadow: 4px 4px 5px white;
-            }
-        }
+   &__spotlight {
+    display: flex;
+    width: 37.5%;
+    background-color: white;
+   }
 
-        &--mobile {
-            @include tablet {
-                display: none;
-            }
-        }
+   &__img {
+    width: 100px;
+    border-radius: 0.25rem;
+   }
 
-        &--tab {
-            display: none;
-            
-            @include tablet {
-                display: flex;
-            }
-        }
-    }
+   &__book {
+    padding: 0 0.25rem;
+   }
 
-    &__book {
-        width: 10rem;
-        height: 20rem;
+   &__white {
+    background-color: white;
+    display: flex;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    gap: 20px;
+   }
 
-        
-        @include tablet {
-            width: 15rem;
-            height: 30rem;
-        }
-        
-        @include desktop {
-            width: 20rem;
-            height: 40rem;
-        }
+   &__i {
+    width: 175px; 
+    border-radius: 0.25rem;
+   }
 
-        // &:hover {
-        //     animation-name: size ;
-        //     animation-duration: 1s;
-            // width: 12.5rem;
-            // height: 25rem;
-    
-            // @include tablet {
-            //     width: 17.5rem;
-            //     height: 35rem;
-            // }
-    
-            // @include desktop {
-            //     width: 22.5rem;
-            //     height: 45rem;
-            // }
-        // }
-    }
+   &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+
+   &__name {
+    font-size:0.75rem;
+   }
+
+   &__author {
+    font-size: 0.5rem;
+    font-weight: 500;
+   }
+
+   &__description {
+    font-size: 0.5rem;
+    font-weight: 400;
+   }
 }

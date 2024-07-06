@@ -12,7 +12,7 @@
     padding: 6rem 0;
 
     &__form {
-        background-color: $lavender-blush;
+        // background-color: $lavender-blush;
         width: 80%;
         display: flex;
         flex-direction: column;
@@ -25,7 +25,7 @@
 
     &__title {
         font-size: 1.5rem;
-        color: $rosewood;
+        // color: $rosewood;
         text-align: center;
     }
 
@@ -40,9 +40,9 @@
         border: none;
         padding: 1rem 2rem;
         border-radius: 0.25rem;
-        background-color: $rosewood;
+        // background-color: $rosewood;
         color: white;
-        box-shadow: 4px 4px 5px $sunset;
+        // box-shadow: 4px 4px 5px $sunset;
     }
 
     &__recs {
@@ -50,7 +50,7 @@
         flex-direction: column;
         align-items: center;
         width: 80%;
-        background-color: $lavender-blush; 
+        // background-color: $lavender-blush; 
         box-shadow: 4px 4px 5px black;
     }
 }

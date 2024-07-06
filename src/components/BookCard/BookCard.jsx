@@ -33,16 +33,7 @@ export default function BookCard({
   useEffect(() => {
     const chatGpt = async () => {
       const content = await axios.post(
-        `https://api.openai.com/v1/chat/completions`,
-        {
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: `Tell me why should I read ${title} by ${author}, in two lines` }],
-        },
-        {
-          headers: {
-            Authorization: `Bearer sk-proj-xbcDJNv46oHriuDGKTpRT3BlbkFJNGrfgS2AFrJMAhOfJgNn`,
-          },
-        }
+
       );
       setRecommendation(content.data.choices[0].message.content)
     };

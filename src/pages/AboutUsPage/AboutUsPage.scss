@@ -10,8 +10,8 @@
     padding-bottom: 2rem;
 
     &__header {
-        background-color: $lavender-blush;
-        border: 20px solid $rosewood;
+        // background-color: $lavender-blush;
+        // border: 20px solid $rosewood;
         padding: 2rem;
         width: 90%;
         margin-top: 2rem;
@@ -20,7 +20,7 @@
 
     &__title {
         font-size: 2rem;
-        color: $rosewood;
+        // color: $rosewood;
         margin-bottom: 1rem;
     }
 
@@ -35,17 +35,17 @@
 
     &__button {
         padding: 0.5rem 1rem;
-        background-color: $azure-web;
+        // background-color: $azure-web;
         width: 9rem;
         display: flex;
         justify-content: center;
         margin-top: 1rem;
-        box-shadow: 4px 4px 5px $rosewood;
+        // box-shadow: 4px 4px 5px $rosewood;
         font-size: 1rem;
     }
 
     &__link {
         text-decoration: none;
-        color: $rosewood;
+        // color: $rosewood;
     }
 }

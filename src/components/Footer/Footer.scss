@@ -5,19 +5,46 @@
 @use '../../styles/partials/variables' as *;
 
 .footer {
-    background-color: $lavender-blush;
-    width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: space-around;
+    background-color: $brown;
+    padding: 2rem 0;
+
+    &__box {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__logo {
+        width: 7rem;
+        border: white solid 1px;
+        border-radius: 50%;
+    }
 
     &__title {
-        font-size: 1rem;
-        color: $rosewood;
-        padding: 1rem 2rem;
-        background-color: white;
-        box-shadow: 4px 4px 5px $rosewood;
-        border: 2px solid $carolina-blue;
+        color: white;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    &__social {
+        display: flex;
+        gap: 5px;
+        background-color: $light-copper;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+    }
+
+    &__media {
+        width: 2rem;
+
+        &--twitter {
+            width: 3.25rem;
+        }
+
+        &--linkedin {
+            width: 2.15rem;
+        }
     }
 
     &__link {

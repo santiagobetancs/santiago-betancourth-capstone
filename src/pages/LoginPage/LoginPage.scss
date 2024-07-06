@@ -15,7 +15,7 @@
     }
 
     &__form {
-        background-color: $rosewood;
+        // background-color: $rosewood;
         width: 95%;
         height: 70vh;
         border-radius: 0.25rem;
@@ -50,15 +50,15 @@
     }
 
     &__label {
-        color: $night;
+        // color: $night;
         font-weight: 700;
     }
 
     &__input {
         border-radius: 16px;
         padding: 0.5rem 1rem;
-        border: 1px solid $night;
-        box-shadow: 4px 4px 5px $rosewood;
+        // border: 1px solid $night;
+        // box-shadow: 4px 4px 5px $rosewood;
         margin-top: 5px;
     }
 
@@ -66,8 +66,8 @@
         margin: 0;
         width: 200px;
         padding: 0.5rem 1rem;
-        background-color: $rosewood;
-        box-shadow: 4px 4px 5px $rosewood;
+        // background-color: $rosewood;
+        // box-shadow: 4px 4px 5px $rosewood;
         border: 1px solid white;
         border-radius: 1rem;
         color: white;

@@ -1,83 +1,95 @@
-import './SignupPage.scss'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import { useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import "./SignupPage.scss";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/images/StoryTime.png";
 
 export default function SignupPage() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
+  const [user, setUser] = useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
 
-    const [user, setUser] = useState({
-        first_name: "",
-        last_name: "",
-        username: "",
-        email: "",
-        password: ""
-    })
-
-    const onChange = (e) => {
-        try {
-            e.preventDefault();
-            const { name, value } = e.target
-            setUser({
-                ...user,
-                [name]: value,
-            })
-
-        } catch (err) {
-            console.error(err)
-        }
+  const onChange = (e) => {
+    try {
+      e.preventDefault();
+      const { name, value } = e.target;
+      setUser({
+        ...user,
+        [name]: value,
+      });
+    } catch (err) {
+      console.error(err);
     }
+  };
 
-    const onSubmit = async (e) => {
-        try {
-            e.preventDefault();
-            const result = await axios.post("http://localhost:8080/users/signup", user)
-            console.log(result)
-        } catch (err) {
-            console.error(err)
-        }
+  const onSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const result = await axios.post(
+        "http://localhost:8080/users/signup",
+        user
+      );
+      console.log(result);
+    } catch (err) {
+      console.error(err);
     }
-    console.log(user)
+  };
+  console.log(user);
 
-    return (
-        <>
-            <Header />
-            <form onSubmit={onSubmit} className="signup">
-                <section className="signup__form">
-                    <div className="signup__container">
-                        <div className="signup__div">
-                            <label className="signup__label">First Name</label>
-                            <input onChange={onChange} className="signup__input" type="text" name="first_name" placeholder="William"/>
-                        </div>
-                        <div className="signup__div">
-                            <label className="signup__label">Last Name</label>
-                            <input onChange={onChange} className="signup__input" type="text" name="last_name" placeholder="Shakespeare"/>
-                        </div>
-                        <div className="signup__div">
-                            <label className="signup__label">email</label>
-                            <input onChange={onChange} className="signup__input" type="text" name="email" placeholder="wshakespeare@mail.com"/>
-                        </div>
-                        <div className="signup__div">
-                            <label className="signup__label">Username</label>
-                            <input onChange={onChange} className="signup__input" type="text" name="username" placeholder="realshakespeare"/>
-                        </div>
-                        <div className="signup__div">
-                            <label className="signup__label">Password</label>
-                            <input onChange={onChange} className="signup__input" type="text" name="password" placeholder="******"/>
-                        </div>
-                        <div className="signup__div">
-                            <label className="signup__label">Sign-up</label>
-                            <button  type="submit" className="signup__button">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </form>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="signup">
+        <form onSubmit={onSubmit} className="signup__form">
+          <section className="signup__container signup__container--left">
+            <h2 className="signup__title">Create Account</h2>
+            <div className="signup__box">
+                <label className="signup__label">First Name
+                    <input className="signup__input" type="text" onChange={onChange} name="first_name"/>
+                </label>
+            </div>
+            <div className="signup__box">
+                <label className="signup__label">Last Name
+                    <input className="signup__input" type="text" onChange={onChange} name="last_name"/>
+                </label>
+            </div>
+            <div className="signup__box">
+                <label className="signup__label">Email
+                    <input className="signup__input" type="text" onChange={onChange} name="email"/>
+                </label>
+            </div>
+            <div className="signup__box">
+                <label className="signup__label">User Name
+                    <input className="signup__input" type="text" onChange={onChange} name="username"/>
+                </label>
+            </div>
+            <div className="signup__box">
+                <label className="signup__label">Password
+                    <input className="signup__input" type="password" onChange={onChange} name="password"/>
+                </label>
+            </div>
+            <button onClick={() => navigate('/login')} type="submit" className="signup__button">
+                SUBMIT
+            </button>
+          </section>
+          <section className="signup__container signup__container--right">
+                <img
+                className="signup__logo"
+                src={logo}
+                alt=""
+                />
+          </section>
+        </form>
+      </main>
+      <Footer />
+    </>
+  );
 }
