@@ -97,22 +97,22 @@ export default function BookCard({
       <img className="rec__img" src={book_image} alt="img" />
       <h4 className="rec__subtitle">{title}</h4>
       <div className="rec__block">
-        <Link className="rec__link">
-          <h4 onClick={onClick} className="rec__cmore">
-            Click here to see more info!
+          <h4 onClick={onClick} className={cmore === false ? "rec__cmore" : "rec__cmore rec__cmore--none"}>
+            More
           </h4>
-        </Link>
-        <img onClick={onLike} className="rec__heart" src={heart} alt="heart" />
+          <h4 onClick={onClick} className={cmore === true ? "rec__cmore" : "rec__cmore rec__cmore--none"}>
+            Less
+          </h4>
+        <img onClick={onLike} className={liked === false ? "rec__heart" : "rec__heart rec__heart--none"} src={heart} alt="heart" />
         <img onClick={removeLike} className={(liked === false) ? `rec__heart rec__heart--none` : `rec__heart`} src={del} alt="delete" />
       </div>
 
       {cmore && (
         <>
           <h4 className="rec__subtitle">{author}</h4>
-          <h4>{description}</h4>
-          <p>{recommendation}</p>
-          <a href={amazon_product_url}>
-            <h4>Find it on Amazon!</h4>
+          <p className="rec__desc">{recommendation}</p>
+          <a className="rec__link" href={amazon_product_url}>
+            <h4 >Find it on Amazon!</h4>
           </a>
         </>
       )}

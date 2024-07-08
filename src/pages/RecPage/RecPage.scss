@@ -9,48 +9,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 6rem 0;
+    padding: 11.75rem 0;
+
+    &__click {
+        padding: 2rem 0;
+    }
 
     &__form {
-        // background-color: $lavender-blush;
-        width: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
         justify-content: center;
-        padding: 2rem;
-        box-shadow: 4px 4px 5px black;
+        gap: 20px;
     }
 
     &__title {
-        font-size: 1.5rem;
-        // color: $rosewood;
+        font-size: 2rem;
+        color: $brown;
         text-align: center;
     }
 
+    &__container {
+        display: flex;
+        gap: 15px;
+    }
+
     &__select {
-        width: 100%;
-        padding: 1rem;
-        border: none;
-        border-radius: 0.25rem;
+        padding: 1rem 1rem;
+        border-radius: 2rem;
+        border: 0.5px solid $brown;
     }
 
     &__button {
         border: none;
         padding: 1rem 2rem;
-        border-radius: 0.25rem;
-        // background-color: $rosewood;
+        border-radius: 2rem;
+        background-color: $orange;
         color: white;
-        // box-shadow: 4px 4px 5px $sunset;
+        cursor: pointer;
+
+        &--none {
+            display: none;
+        }
     }
 
     &__recs {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        // background-color: $lavender-blush; 
-        box-shadow: 4px 4px 5px black;
+        justify-content: space-evenly;
+        width: 95%;
     }
 }

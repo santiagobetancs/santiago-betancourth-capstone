@@ -30,7 +30,7 @@
     &__social {
         display: flex;
         gap: 5px;
-        background-color: $light-copper;
+        // background-color: $light-copper;
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
     }
@@ -45,6 +45,12 @@
         &--linkedin {
             width: 2.15rem;
         }
+    }
+
+    &__icons {
+        color: white;
+        height: 2rem;
+        width: 2rem;
     }
 
     &__link {
