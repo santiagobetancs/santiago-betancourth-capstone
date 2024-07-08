@@ -1,0 +1,70 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/variables" as *;
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.758);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+
+  &__box {
+    background-color: $light-copper;
+    position: fixed;
+    width: 75%;
+    height: 77.5%;
+    top: 15%;
+    left: 12.5%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+  }
+
+  &__title {
+    color: $brown;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    
+  }
+
+  &__input {
+    border: 1px solid $brown;
+    border-radius: 1rem;
+    padding: 0.25rem 5rem 0.25rem 0.5rem;
+    width: 75%;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  &__button {
+    border: 1px solid white;
+    background-color: $orange;
+    padding: 0.25rem 1rem;
+    color: white;
+    border-radius: 1rem;
+  }
+}

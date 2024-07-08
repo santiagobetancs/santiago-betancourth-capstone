@@ -5,71 +5,82 @@
 @use '../../styles/partials/variables' as *;
 
 .login {
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 3rem 0;
-
-    @include tablet {
-        padding: 1rem;
-    }
 
     &__form {
-        // background-color: $rosewood;
-        width: 95%;
-        height: 70vh;
-        border-radius: 0.25rem;
+        width: 75%;
+        background-color: $light-copper;
+        display: flex;
+        justify-content: center;
+        border-radius: 0.5rem;
+        height: 80vh;
+        margin: 5rem 0;
+    }
+
+    &__holder {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        @include tablet {
-            width: 80%;
-            height: 70vh;
-        }
+        gap: 15px;
+        margin: 0;
     }
 
     &__container {
-        width: 97.5%;
-        height: 95%;
-        background-color: white;
+        width: 47.5%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        margin: 0;
-        gap: 30px;
+        justify-content: center;
+        height: 90%;
+
+        &--left {
+            background-color: white;
+            gap: 0px;
+            padding: 2rem 0;
+        }
+
+        &--right {
+            background-image: url('../../assets/images/subway.jpg');
+            background-size: cover;
+            justify-content: flex-start;
+            background-repeat: no-repeat;
+            align-items: flex-end;
+        }
     }
 
-    &__div {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        margin: 0;
+    &__logo {
+        width: 8rem;
+        margin: 2rem 2rem;
+    }
+
+    &__title {
+        color: $brown;
+        margin: 2.5rem 0;
     }
 
     &__label {
-        // color: $night;
+        font-size: 0.5rem;
+        color: $brown;
+        display: flex;
+        flex-direction: column;
         font-weight: 700;
+        width: 190px;
     }
 
     &__input {
-        border-radius: 16px;
-        padding: 0.5rem 1rem;
-        // border: 1px solid $night;
-        // box-shadow: 4px 4px 5px $rosewood;
-        margin-top: 5px;
+        border: 1px solid lightgray;
+        border-radius: 0.5rem;
+        font-size: 0.5rem;
+        padding: 0.35rem 0.25rem;
     }
 
     &__button {
-        margin: 0;
-        width: 200px;
-        padding: 0.5rem 1rem;
-        // background-color: $rosewood;
-        // box-shadow: 4px 4px 5px $rosewood;
-        border: 1px solid white;
-        border-radius: 1rem;
+        border: none;
+        padding: 0.5rem 3rem;
+        background-color: $orange;
         color: white;
+        font-size: 0.5rem;
+        border-radius: 0.75rem;
+        margin: 2rem 0;
     }
 }

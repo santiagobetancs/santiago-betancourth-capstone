@@ -5,8 +5,12 @@ import insta from '../../assets/images/insta.png'
 import twitter from '../../assets/images/twitter.webp'
 import linkedin from '../../assets/images/linkedin.png'
 import orange from '../../assets/images/orange.png'
+import { useParams } from "react-router-dom";
 
 export default function Header() {
+
+  const {id} = useParams()
+
   return (
     <>
       <nav className="header">
@@ -32,7 +36,7 @@ export default function Header() {
           </div>
         </section>
         <section className="header__container header__container--bottom">
-          <Link to='/' className="header__link">
+          <Link to={`/home/${id}`} className="header__link">
           <div className="header__option">
             <h6 className="header__text">
               Home

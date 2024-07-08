@@ -38,6 +38,11 @@ export default function SignupPage() {
         user
       );
       console.log(result);
+      if (result.status === 201) {
+        navigate('/login')
+      } else (
+        error("fill in all fields")
+      )
     } catch (err) {
       console.error(err);
     }
@@ -53,30 +58,30 @@ export default function SignupPage() {
             <h2 className="signup__title">Create Account</h2>
             <div className="signup__box">
                 <label className="signup__label">First Name
-                    <input className="signup__input" type="text" onChange={onChange} name="first_name"/>
+                    <input required className="signup__input" type="text" onChange={onChange} name="first_name"/>
                 </label>
             </div>
             <div className="signup__box">
                 <label className="signup__label">Last Name
-                    <input className="signup__input" type="text" onChange={onChange} name="last_name"/>
+                    <input required className="signup__input" type="text" onChange={onChange} name="last_name"/>
                 </label>
             </div>
             <div className="signup__box">
                 <label className="signup__label">Email
-                    <input className="signup__input" type="text" onChange={onChange} name="email"/>
+                    <input required className="signup__input" type="text" onChange={onChange} name="email"/>
                 </label>
             </div>
             <div className="signup__box">
                 <label className="signup__label">User Name
-                    <input className="signup__input" type="text" onChange={onChange} name="username"/>
+                    <input required className="signup__input" type="text" onChange={onChange} name="username"/>
                 </label>
             </div>
             <div className="signup__box">
                 <label className="signup__label">Password
-                    <input className="signup__input" type="password" onChange={onChange} name="password"/>
+                    <input required className="signup__input" type="password" onChange={onChange} name="password"/>
                 </label>
             </div>
-            <button onClick={() => navigate('/login')} type="submit" className="signup__button">
+            <button type="submit" className="signup__button">
                 SUBMIT
             </button>
           </section>

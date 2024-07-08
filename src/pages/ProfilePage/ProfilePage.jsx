@@ -5,32 +5,45 @@ import abel from "../../assets/images/abel.png";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import ModalComponent from "../../components/ModalComponen/ModalComponent";
-import { useNavigate } from "react-router-dom";
-import ProfBook from "../../components/ProfBook/ProfBook";
+import ModalComponent from "../../components/ModalComponent/ModalComponent";
+import IndivBook from "../../components/IndivBook/IndivBook";
+import edit from '../../assets/images/edit.png'
 
 export default function ProfilePage() {
-  const navigate = useNavigate();
   const { id } = useParams();
   const [profile, setProfile] = useState({ data: [] });
-  const [books, setBooks] = useState({data: []});
+  const [books, setBooks] = useState({ data: [] });
   const [openModal, setOpenModal] = useState(false);
+  const [render, setRender] = useState(false);
+  const [more, setMore] = useState(false);
 
   useEffect(() => {
-    const getProfile = async () => {
-      const result = await axios.get(`http://localhost:8080/users/indiv/${id}`);
-      setProfile(result.data);
-    };
-    getProfile();
+    try {
+      const getProfile = async () => {
+        const result = await axios.get(
+          `http://localhost:8080/users/indiv/${id}`
+        );
+        setProfile(result.data);
+      };
+      getProfile();
+    } catch (err) {
+      console.error(err);
+    }
 
-    const getBooks = async () => {
-      const result = await axios.get(`http://localhost:8080/users/books/${id}`);
-      setBooks(result);
-    };
-    getBooks();
-  }, [id, openModal]);
+    try {
+      const getBooks = async () => {
+        const result = await axios.get(
+          `http://localhost:8080/users/books/${id}`
+        );
+        setBooks(result);
+      };
+      getBooks();
+    } catch (err) {
+      console.error(err);
+    }
+  }, [id, openModal, render]);
 
-  const { first_name, last_name, email } = profile;
+  console.log(books[0]);
 
   return (
     <>
@@ -42,47 +55,74 @@ export default function ProfilePage() {
       <Header />
       <main className="profile">
         <section className="profile__container">
+          <img className="profile__image" src={abel} alt="profile_image" />
           <div className="profile__details">
-            <img className="profile__image" src={abel} alt="profile_image" />
-            <div className="profile__box">
-              <label className="profile__label">Username</label>
-              <h3 className="profile__text">{id}</h3>
-            </div>
-            <div className="profile__box">
-              <label className="profile__label">Name</label>
-              <h3 className="profile__text">{`${first_name} ${last_name}`}</h3>
-            </div>
-            <div className="profile__box">
-              <label className="profile__label">email</label>
-              <h3 className="profile__text">{email}</h3>
+            <h4 className="profile__liked">Profile</h4>
+            <h1 className="profile__title">{id}</h1>
+            <h4 className="profile__liked">
+              {`${books.data.length} liked books`}
+            </h4>
+            <div onClick={() => setOpenModal(true)} className="profile__edit">
+              <img className="profile__pencil" src={edit} alt="edit" />
+              <h4 className="profile__subtitle">
+                Edit
+              </h4>
             </div>
           </div>
-          <div className="profile__likes">
-            <h3 className="profile__like-text">Liked Books</h3>
-            {books.data.slice(0, 2).map((book) => {
+        </section>
+        <section
+          className={
+            books.data.length === 0
+              ? "profile__carousel profile__carousel--none"
+              : "profile__carousel"
+          }
+        >
+          <div className="profile__books">
+            {books.data.slice(0, 3).map((book) => {
               return (
-                <>
-                  <ProfBook title={book.title} book_image={book.book_image}/>
-                </>
+                <IndivBook
+                  recommendation={book.recommendation}
+                  render={render}
+                  setRender={setRender}
+                  title={book.title}
+                  book_image={book.book_image}
+                  author={book.author}
+                  amazon={book.amazon_product_url}
+                />
               );
             })}
-            <div className="profile__like-box">
-              <div className="profile__like-blank"></div>
-              <h6 onClick={() => navigate(`/profile/books/${id}`)}>
-                See more...
-              </h6>
-            </div>
           </div>
-          <div className="profile__buttons">
-            <button
-              onClick={() => {
-                setOpenModal(true);
-              }}
-              className="profile__button profile__button--edit"
+          <div className={more === true ? "profile__books" : "profile__books profile__books--none"}>
+            {books.data.slice(3).map((book) => {
+                  return (
+                    <IndivBook
+                      recommendation={book.recommendation}
+                      render={render}
+                      setRender={setRender}
+                      title={book.title}
+                      book_image={book.book_image}
+                      author={book.author}
+                    />
+                  );
+                })}
+          </div>
+          <div className={books.data.length > 3 ? "profile__box" : "profile__box profile__box--none"}>
+            <h4
+              onClick={() => setMore(true)}
+              className={
+                more === true
+                  ? "profile__more--none"
+                  : "profile__more"
+              }
             >
-              EDIT
-            </button>
-            <h3 className="profile__button profile__button--home">HOME</h3>
+              Show More
+            </h4>
+            <h4
+              onClick={() => setMore(false)}
+              className={more === true ? "profile__less" : "profile__less--none"}
+            >
+              See Less
+            </h4>
           </div>
         </section>
       </main>

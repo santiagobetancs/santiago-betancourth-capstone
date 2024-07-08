@@ -34,11 +34,8 @@
     }
 
     &__button {
-        padding: 0.5rem 1rem;
-        // background-color: $azure-web;
-        width: 9rem;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         margin-top: 1rem;
         // box-shadow: 4px 4px 5px $rosewood;
         font-size: 1rem;
@@ -47,5 +44,6 @@
     &__link {
         text-decoration: none;
         // color: $rosewood;
+        color: $brown;
     }
 }

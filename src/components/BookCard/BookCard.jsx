@@ -33,12 +33,16 @@ export default function BookCard({
   useEffect(() => {
     const chatGpt = async () => {
       const content = await axios.post(
-
-      );
-      setRecommendation(content.data.choices[0].message.content)
+        `http://localhost:8080/users/chat`, {
+          title: title,
+          author: author
+        });
+      setRecommendation(content.data)
     };
     chatGpt();
-  }, [])
+  }, [click])
+
+  console.log(recommendation)
 
   useEffect(() => {
     const sendBook = async () => {
