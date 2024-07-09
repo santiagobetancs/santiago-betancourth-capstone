@@ -8,7 +8,7 @@ My app will be a useful tool to help readers decide on their next book. What it 
 
 ## How to deploy
 
-Follow this links: [https://santiago-betancourth-capstone-nwsoartx7.vercel.app/](https://santiago-betancourth-capstone.vercel.app/)
+Follow this links: https://santiago-betancourth-capstone.vercel.app
 
 ### Problem
 
