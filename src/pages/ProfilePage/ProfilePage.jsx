@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import ModalComponent from "../../components/ModalComponent/ModalComponent";
 import IndivBook from "../../components/IndivBook/IndivBook";
 import edit from '../../assets/images/edit.png';
-import 'dotenv/config';
 
 export default function ProfilePage() {
   const { id } = useParams();

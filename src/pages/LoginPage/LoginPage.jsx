@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.scss";
 import axios from "axios";
-import 'dotenv/config';
 
 export default function LoginPage() {
   const [user, setUser] = useState({

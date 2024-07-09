@@ -6,7 +6,6 @@ import axios from "axios";
 import { useState } from "react";
 import React from "react";
 import BookCard from "../../components/BookCard/BookCard";
-import 'dotenv/config'
 
 export default function RecPage() {
   const [books, setBooks] = useState();

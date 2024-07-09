@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './IndivBook.scss'
-import 'dotenv/config';
 
 export default function IndivBook({
   title,

@@ -5,7 +5,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import 'dotenv/config';
 
 export default function BookComponentPage() {
   const [books, setBooks] = useState({data: []});

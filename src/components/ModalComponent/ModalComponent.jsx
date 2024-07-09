@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import abel from "../../assets/images/abel.png";
-import 'dotenv/config';
 
 export default function ModalComponent({ openModal, setOpenModal, profile }) {
   if (!openModal) {

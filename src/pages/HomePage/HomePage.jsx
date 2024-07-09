@@ -6,7 +6,6 @@ import { Link, useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import 'dotenv/config';
 
 export default function HomePage() {
   const [data, setData] = useState();

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import heart from "../../assets/images/heart.webp";
 import axios from "axios";
 import del from '../../assets/images/delete.webp'
-import 'dotenv/config'
 
 export default function BookCard({
   title,
