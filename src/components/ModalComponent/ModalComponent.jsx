@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import abel from "../../assets/images/abel.png";
+import 'dotenv/config';
 
 export default function ModalComponent({ openModal, setOpenModal, profile }) {
   if (!openModal) {
@@ -40,8 +41,8 @@ export default function ModalComponent({ openModal, setOpenModal, profile }) {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axios.put(`http://localhost:8080/users/indiv/${id}`, user);
-      await axios.put(`http://localhost:8080/users/books/${id}`, {
+      await axios.put(`${process.env.VITE_API_URL}/users/indiv/${id}`, user);
+      await axios.put(`${process.env.VITE_API_URL}/users/books/${id}`, {
         username: user.username
       })
       navigate(`/profile/${user.username}`);

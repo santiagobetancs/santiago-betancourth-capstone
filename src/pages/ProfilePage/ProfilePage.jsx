@@ -7,7 +7,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ModalComponent from "../../components/ModalComponent/ModalComponent";
 import IndivBook from "../../components/IndivBook/IndivBook";
-import edit from '../../assets/images/edit.png'
+import edit from '../../assets/images/edit.png';
+import 'dotenv/config';
 
 export default function ProfilePage() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export default function ProfilePage() {
     try {
       const getProfile = async () => {
         const result = await axios.get(
-          `http://localhost:8080/users/indiv/${id}`
+          `${process.env.VITE_API_URL}/users/indiv/${id}`
         );
         setProfile(result.data);
       };
@@ -33,7 +34,7 @@ export default function ProfilePage() {
     try {
       const getBooks = async () => {
         const result = await axios.get(
-          `http://localhost:8080/users/books/${id}`
+          `${process.env.VITE_API_URL}/users/books/${id}`
         );
         setBooks(result);
       };
@@ -42,8 +43,6 @@ export default function ProfilePage() {
       console.error(err);
     }
   }, [id, openModal, render]);
-
-  console.log(books[0]);
 
   return (
     <>

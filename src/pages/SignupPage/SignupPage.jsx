@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/StoryTime.png";
+import 'dotenv/config';
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function SignupPage() {
     try {
       e.preventDefault();
       const result = await axios.post(
-        "http://localhost:8080/users/signup",
+        `${process.env.VITE_API_URL}/users/signup`,
         user
       );
       console.log(result);

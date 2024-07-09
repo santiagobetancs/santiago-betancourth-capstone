@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import heart from "../../assets/images/heart.webp";
 import axios from "axios";
 import del from '../../assets/images/delete.webp'
+import 'dotenv/config'
 
 export default function BookCard({
   title,
@@ -33,7 +34,7 @@ export default function BookCard({
   useEffect(() => {
     const chatGpt = async () => {
       const content = await axios.post(
-        `http://localhost:8080/users/chat`, {
+        `${process.env.VITE_API_URL}/users/chat`, {
           title: title,
           author: author
         });
@@ -58,7 +59,7 @@ export default function BookCard({
       try {
         if (liked === true) {
           const result = await axios.post(
-            "http://localhost:8080/users/books",
+            `${process.env.VITE_API_URL}/users/books`,
             obj
           );
           console.log(result);
@@ -80,7 +81,7 @@ export default function BookCard({
     const deleteBook = async () => {
         try {
             if (remove === true) {
-                await axios.delete(`http://localhost:8080/users/books/${title}?user=${id}`)
+                await axios.delete(`${process.env.VITE_API_URL}/users/books/${title}?user=${id}`)
                 setLiked(false)
                 setRemove(false)
             }

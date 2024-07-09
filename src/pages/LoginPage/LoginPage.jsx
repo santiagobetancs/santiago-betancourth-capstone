@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.scss";
 import axios from "axios";
+import 'dotenv/config';
 
 export default function LoginPage() {
   const [user, setUser] = useState({
@@ -31,7 +32,7 @@ export default function LoginPage() {
     try {
       e.preventDefault();
       const result = await axios.post(
-        "http://localhost:8080/users/login",
+        `${process.env.VITE_API_URL}/users/login`,
         user
       );
       if (result) {
@@ -90,23 +91,6 @@ export default function LoginPage() {
           </section>
         </form>
       </main>
-      {/* <form onSubmit={onSubmit} className="login">
-                <section className="login__form">
-                    <div className="login__container">
-                        <div className="login__div">
-                            <label className="login__label">Username</label>
-                            <input onChange={onChange} className="login__input" type="text" name="username" placeholder="realshakespeare" required/>
-                        </div>
-                        <div className="login__div">
-                            <label className="login__label">Password</label>
-                            <input onChange={onChange}  className="login__input" type="text" name="password" placeholder="*********" required/>
-                        </div>
-                        <button type="submit" className="login__button">
-                        LOGIN
-                        </button>
-                    </div>
-                </section>
-            </form> */}
       <Footer />
     </>
   );

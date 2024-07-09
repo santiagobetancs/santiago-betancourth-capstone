@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState } from "react";
 import React from "react";
 import BookCard from "../../components/BookCard/BookCard";
+import 'dotenv/config'
 
 export default function RecPage() {
   const [books, setBooks] = useState();
@@ -15,19 +16,10 @@ export default function RecPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const result = await axios.get(
-      `http://localhost:8080/users/nyt/${e.target.list_name.value}`
+      `${process.env.VITE_API_URL}/users/nyt/${e.target.list_name.value}`
     );
     setBooks(result);
   };
-
-  const shuffle = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
-
-  if (books) {
-    const array = books.data.body;
-    // const shuffledArray = shuffle(array);
-  }
 
   return (
     <>

@@ -21,9 +21,6 @@ export default function Footer() {
                     </div>
                 </Link>
                 <div className='footer__social'>
-                    {/* <img className='footer__media' src={insta} alt="" />
-                    <img className='footer__media footer__media--twitter' src={twitter} alt="" />
-                    <img className='footer__media footer__media--linkedin' src={linkedin} alt="" /> */}
                     <FaInstagram className="footer__icons"/>
                     <FaXTwitter className="footer__icons"/>
                     <FaLinkedin className="footer__icons"/>

@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import 'dotenv/config';
 
 export default function HomePage() {
   const [data, setData] = useState();
@@ -15,7 +16,7 @@ export default function HomePage() {
   useEffect(() => {
     async function getProfile() {
       const result = await axios.get(
-        `http://localhost:8080/users/profile/${id}`,
+        `${process.env.VITE_API_URL}/users/profile/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

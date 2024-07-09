@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './IndivBook.scss'
+import 'dotenv/config';
 
 export default function IndivBook({
   title,
@@ -27,7 +28,7 @@ export default function IndivBook({
       try {
         if (remove === true) {
           await axios.delete(
-            `http://localhost:8080/users/books/${title}?user=${id}`
+            `${process.env.VITE_API_URL}/users/books/${title}?user=${id}`
           );
           setRemove(false);
         }

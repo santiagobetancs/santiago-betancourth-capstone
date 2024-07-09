@@ -5,6 +5,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import 'dotenv/config';
 
 export default function BookComponentPage() {
   const [books, setBooks] = useState({data: []});
@@ -13,7 +14,7 @@ export default function BookComponentPage() {
 
   useEffect(() => {
     const getBooks = async () => {
-      const result = await axios.get(`http://localhost:8080/users/books/${id}`);
+      const result = await axios.get(`${process.env.VITE_API_URL}${id}`);
       setBooks(result);
     };
     getBooks();
