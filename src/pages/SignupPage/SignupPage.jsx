@@ -34,7 +34,7 @@ export default function SignupPage() {
     try {
       e.preventDefault();
       const result = await axios.post(
-        `${process.env.VITE_API_URL}users/signup`,
+        `${process.env.VITE_API_URL}/users/signup`,
         user
       );
       console.log(result);
