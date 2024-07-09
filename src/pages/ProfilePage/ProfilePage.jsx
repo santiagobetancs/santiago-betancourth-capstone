@@ -78,7 +78,7 @@ export default function ProfilePage() {
           }
         >
           <div className="profile__books">
-            {books.data.slice(0, 3).map((book) => {
+            {books.data.slice(0, 4).map((book) => {
               return (
                 <IndivBook
                   recommendation={book.recommendation}
@@ -93,7 +93,7 @@ export default function ProfilePage() {
             })}
           </div>
           <div className={more === true ? "profile__books" : "profile__books profile__books--none"}>
-            {books.data.slice(3).map((book) => {
+            {books.data.slice(4).map((book) => {
                   return (
                     <IndivBook
                       recommendation={book.recommendation}
@@ -106,7 +106,7 @@ export default function ProfilePage() {
                   );
                 })}
           </div>
-          <div className={books.data.length > 3 ? "profile__box" : "profile__box profile__box--none"}>
+          <div className={books.data.length > 4 ? "profile__box" : "profile__box profile__box--none"}>
             <h4
               onClick={() => setMore(true)}
               className={

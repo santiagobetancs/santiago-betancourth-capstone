@@ -47,6 +47,7 @@
     &__books {
         display: flex;
         justify-content: space-evenly;
+        align-items: flex-start;
         width: 100%;
         flex-wrap: wrap;
 
@@ -64,6 +65,7 @@
         background-color: $orange;
         border-radius: 5rem;
         padding: 1rem 0;
+        cursor: pointer;
 
         &--none {
             display: none;
@@ -75,6 +77,7 @@
     }
 
     &__less {
+        cursor: pointer;
         &--none {
             display: none;
         }
@@ -103,6 +106,7 @@
         padding: 0.5rem 1rem;
         border-radius: 2rem;
         margin-top: 0.5rem;
+        cursor: pointer;
     }
 
     &__pencil {

@@ -4,31 +4,94 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import bookcase from "../../assets/images/bookcase.jpg";
 import logo from "../../assets/images/StoryTime.png";
-import copperhead from '../../assets/images/copperhead.jpg'
-import axios from "axios";
-import { useEffect, useState } from "react";
+import copperhead from "../../assets/images/copperhead.jpg";
 
 export default function WelcomePage() {
-  const [books, setBooks] = useState({ data: { body: [] } });
-  const [highlights, setHighlights] = useState({ data: { body: [] } });
+  const booksArray = [
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781668047071.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9780316565073.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781250178633.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781668037713.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781638931799.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9780593441282.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781649374042.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9780593492918.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781635575583.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781649374172.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781635575606.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781538704431.jpg",
+    },
+  ];
 
-  useEffect(() => {
-    const getBooks = async () => {
-      const result = await axios.get(
-        `http://localhost:8080/users/nyt/audio-fiction`
-      );
-      setBooks(result);
-    };
-    getBooks();
-
-    const getHighlight = async () => {
-      const res = await axios.get(
-        `http://localhost:8080/users/nyt/young-adult-paperback-monthly`
-      );
-      setHighlights(res);
-    };
-    getHighlight();
-  }, []);
+  const highlightArray = [
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781402277832.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781728276229.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9780593855720.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781534467637.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781728210292.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781419760877.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9781101934715.jpg",
+    },
+    {
+      book_image:
+        "https://storage.googleapis.com/du-prd/books/images/9780593433317.jpg",
+    },
+  ];
 
   return (
     <>
@@ -52,20 +115,17 @@ export default function WelcomePage() {
             </Link>
           </div>
           <div className="welcome__slideshow">
-            {books &&
-              books.data.body.map((book) => {
-                const { book_details } = book;
-
-                return (
-                  <div className="welcome__slide">
-                    <img
-                      className="welcome__mage"
-                      src={book_details[0].book_image}
-                      alt="book"
-                    />
-                  </div>
-                );
-              })}
+            {booksArray.map((book) => {
+              return (
+                <div className="welcome__slide">
+                  <img
+                    className="welcome__mage"
+                    src={book.book_image}
+                    alt="book"
+                  />
+                </div>
+              );
+            })}
           </div>
         </section>
         <section className="welcome__trending">
@@ -78,36 +138,34 @@ export default function WelcomePage() {
           </div>
           <div className="welcome__recommends">
             <div className="welcome__books">
-              {highlights.data.body.slice(0, 8).map((highlight) => {
-
-                const {book_details} = highlight
-
+              {highlightArray.map((book) => {
                 return (
-                <div className="welcome__book">
+                  <div className="welcome__book">
                     <img
                       className="welcome__img"
-                      src={book_details[0].book_image}
+                      src={book.book_image}
                       alt="#"
                     />
-                </div>
-                );
+                  </div>
+                )
               })}
             </div>
             <div className="welcome__spotlight">
-                <div className="welcome__white">
-                    <img className="welcome__i" src={copperhead} alt="image" />
-                    <div className="welcome__details">
-                        <h4 className="welcome__name">
-                            Demon Copperhead
-                        </h4>
-                        <h6 className="welcome__author">
-                            Barbara Kingsolver
-                        </h6>
-                        <h6 className="welcome__description">
-                            Demon Copperhead is a beautifully written book about the struggles of an orphan in modern day Appalachia. The book is a modern adaption of the contemporary classic, David Copperfield by Charles Dickens, drawing on its many succesful themes. This book is sure to keep you on the edge of your seat.
-                        </h6>
-                    </div>
-                </div>  
+              <div className="welcome__white">
+                <img className="welcome__i" src={copperhead} alt="image" />
+                <div className="welcome__details">
+                  <h4 className="welcome__name">Demon Copperhead</h4>
+                  <h6 className="welcome__author">Barbara Kingsolver</h6>
+                  <h6 className="welcome__description">
+                    Demon Copperhead is a beautifully written book about the
+                    struggles of an orphan in modern day Appalachia. The book is
+                    a modern adaption of the contemporary classic, David
+                    Copperfield by Charles Dickens, drawing on its many
+                    succesful themes. This book is sure to keep you on the edge
+                    of your seat.
+                  </h6>
+                </div>
+              </div>
             </div>
           </div>
         </section>

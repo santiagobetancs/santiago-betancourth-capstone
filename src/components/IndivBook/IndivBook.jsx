@@ -39,6 +39,8 @@ export default function IndivBook({
     deleteBook();
   }, [remove]);
 
+  console.log(remove)
+
   return (
     <>
       <div className="profile__highlight">
@@ -47,9 +49,9 @@ export default function IndivBook({
           
           <h4 className="profile__liked profile__liked--books">{author}</h4>
           <div className="profile__buttons">
-            <h4 className="profile__button" onClick={removeLike}>X</h4>
-            <h4 className={more === false ? "profile__button" : "profile__button--bottom"} onClick={() => setMore(true)}>More</h4>
             <h4 className={more === true ? "profile__button" : "profile__button--less"} onClick={() => setMore(false)}>Less</h4>
+            <h4 className={more === false ? "profile__button" : "profile__button--bottom"} onClick={() => setMore(true)}>More</h4>
+            <h4 className="profile__button" onClick={removeLike}>X</h4>
           </div>
           <h2 className={more === true ? "profile__name" : "profile__name profile__name--none"}>{title}</h2>
           <h5 className={more === true ? "profile__rec" : "profile__rec profile__rec--none"}>
