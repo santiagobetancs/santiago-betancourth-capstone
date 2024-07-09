@@ -71,5 +71,9 @@
         color: white;
         font-size: 0.5rem;
         border-radius: 0.75rem;
+
+        *:hover {
+            background-color: #b35500;
+        }
     }
 }
