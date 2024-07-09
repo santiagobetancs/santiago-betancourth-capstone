@@ -1,0 +1,90 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        width: 100%;
+
+        &--top {
+            border-bottom: 1px solid lightgray;
+        }
+
+        &--bottom {
+            width: 25%;
+        }
+    }
+
+    &__box {
+        display: flex;
+        gap: 0.5rem;
+
+        &--right {
+            gap: 1.75rem;
+        }
+    }
+
+    &__logo {
+        width: 2.5rem;
+    }
+
+    &__title {
+        color: $brown;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__button {
+        color: $white;
+        background-color: $orange;
+        padding: 0.25rem  1rem;
+        border-radius: 16px;
+        font-weight: 400;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+    }
+
+    &__media {
+        width: 1.5rem;
+
+        &--twitter {
+            width: 2.5rem;
+        }
+
+        &--linkedin {
+            width: 1.6rem;
+        }
+    }
+
+    &__option {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__text {
+        color: $brown;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    &__drop {
+        width: 0.5rem;
+    }
+}

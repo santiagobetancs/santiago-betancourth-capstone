@@ -1,0 +1,39 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    margin: 5rem;
+
+    &__button {
+        width: 30rem;
+        // box-shadow: 4px 4px 5px $rosewood;
+        // background-color: $lavender-blush;
+        // color: $night;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: italic;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    &__book {
+        width: 10rem;
+        height: 20rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

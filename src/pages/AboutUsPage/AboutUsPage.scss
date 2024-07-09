@@ -1,0 +1,49 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.about {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+    &__header {
+        // background-color: $lavender-blush;
+        // border: 20px solid $rosewood;
+        padding: 2rem;
+        width: 90%;
+        margin-top: 2rem;
+        border-radius: 0.25rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        // color: $rosewood;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        line-height: 150%;
+        font-size: 1rem;
+    }
+
+    &__italic {
+        font-style: italic;
+    }
+
+    &__button {
+        display: flex;
+        // justify-content: center;
+        margin-top: 1rem;
+        // box-shadow: 4px 4px 5px $rosewood;
+        font-size: 1rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        // color: $rosewood;
+        color: $brown;
+    }
+}

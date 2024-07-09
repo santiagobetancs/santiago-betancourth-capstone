@@ -1,0 +1,74 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 5rem 0;
+
+    &__title {
+        margin: 2rem 1rem;
+        overflow-wrap: break-word;
+        text-align: center;
+        font-size: 3rem;
+        color: black;
+    }
+
+    &__options {
+        width: 90%;
+        // background-color: $lavender-blush;
+        padding: 1rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.25rem;
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        text-align: center;
+        width: 100%;
+
+        @include tablet {
+            width: 80%;
+        }
+    }
+
+    &__image {
+        border-radius: 50%;
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        // color: $rosewood;
+        // background-color: $lavender-blush;
+        // box-shadow: 4px 4px 5px $rosewood;
+        padding: 0.5rem 1rem;
+        // border: 2px solid $carolina-blue;
+
+        @include tablet {
+            font-size: 1.75rem;
+            padding: 1rem 2rem;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $brown;
+        width: 100%;
+    }
+}

@@ -1,0 +1,115 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.profile {
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    &__image {
+        border-radius: 50%;
+        width: 15%;
+    }
+
+    &__title {
+        font-size: 2.25rem;
+    }
+
+    &__liked {
+        color: $brown;
+        font-size: 1.25rem;
+    }
+
+    &__carousel {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background-color: $light-copper;
+        padding: 4rem 0;
+        gap:50px;
+        align-items: center;
+
+        &--none {
+            display: none;
+        }
+    }
+
+    &__books {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+
+        &--none {
+            display: none;
+        }
+    }
+
+    &__more {
+        width: 15%;
+        font-size: 1rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        background-color: $orange;
+        border-radius: 5rem;
+        padding: 1rem 0;
+        cursor: pointer;
+
+        &--none {
+            display: none;
+        }
+
+        &--true {
+            display: none;
+        }
+    }
+
+    &__less {
+        cursor: pointer;
+        &--none {
+            display: none;
+        }
+    }
+
+    &__box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        &--none {
+            display: none;
+        }
+    }
+
+    &__button {
+        border: none;
+        padding: 0;
+    }
+
+    &__edit {
+        display: flex;
+        gap: 5px;
+        border: 1px solid $brown;
+        width: 100px;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
+
+    &__pencil {
+        width: 1rem;
+    }
+}

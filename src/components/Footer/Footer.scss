@@ -1,0 +1,59 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/resets' as *;
+@use '../../styles/partials/variables' as *;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: $brown;
+    padding: 2rem 2rem;
+
+    &__box {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__logo {
+        width: 7rem;
+        border: white solid 1px;
+        border-radius: 50%;
+    }
+
+    &__title {
+        color: white;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    &__social {
+        display: flex;
+        gap: 5px;
+        // background-color: $light-copper;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+    }
+
+    &__media {
+        width: 2rem;
+
+        &--twitter {
+            width: 3.25rem;
+        }
+
+        &--linkedin {
+            width: 2.15rem;
+        }
+    }
+
+    &__icons {
+        color: white;
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
