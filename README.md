@@ -6,6 +6,10 @@ StoryTime
 
 My app will be a useful tool to help readers decide on their next book. What it will do is use existing information from famous book review sites to give helpful recommendations based on input provided by the user. It will use a language-learning model to provide descriptive feedback on what you'd like about each recommendation.
 
+## How to deploy
+
+Follow this links: https://santiago-betancourth-capstone-nwsoartx7.vercel.app/
+
 ### Problem
 
 As a reader myself I've had many occasions where I go into a bookstore to find my next read but end up feeling overwhelmed by the sheer qauntity of books avaialable. I don't want to just pick a random book either. There's the possibilty it sucks and not only did I just spend over twenty dollars to buy it but now I'm stuck reading a book I don't like. My app would provide you with meaningful insights on each recommendation as well as what it thinks you'd be the most interested in.
