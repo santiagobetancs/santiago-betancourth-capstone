@@ -35,7 +35,7 @@ export default function BookCard({
   useEffect(() => {
     const chatGpt = async () => {
       const content = await axios.post(
-        `${process.env.VITE_API_URL}/users/chat`, {
+        `${baseURL}/users/chat`, {
           title: title,
           author: author
         });
