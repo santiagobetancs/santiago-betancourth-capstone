@@ -7,13 +7,16 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 export default function BookComponentPage() {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   const [books, setBooks] = useState({data: []});
   const [render, setRender] = useState(false)
   const { id } = useParams()
 
   useEffect(() => {
     const getBooks = async () => {
-      const result = await axios.get(`${process.env.VITE_API_URL}${id}`);
+      const result = await axios.get(`${baseURL}/books/${id}`);
       setBooks(result);
     };
     getBooks();

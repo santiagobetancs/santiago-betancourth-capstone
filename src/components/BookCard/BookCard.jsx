@@ -5,6 +5,8 @@ import heart from "../../assets/images/heart.webp";
 import axios from "axios";
 import del from '../../assets/images/delete.webp'
 
+const baseURL = import.meta.env.VITE_API_URL
+
 export default function BookCard({
   title,
   book_image,
@@ -58,7 +60,7 @@ export default function BookCard({
       try {
         if (liked === true) {
           const result = await axios.post(
-            `${process.env.VITE_API_URL}/users/books`,
+            `${baseURL}/users/books`,
             obj
           );
           console.log(result);
@@ -80,7 +82,7 @@ export default function BookCard({
     const deleteBook = async () => {
         try {
             if (remove === true) {
-                await axios.delete(`${process.env.VITE_API_URL}/users/books/${title}?user=${id}`)
+                await axios.delete(`${baseURL}/users/books/${title}?user=${id}`)
                 setLiked(false)
                 setRemove(false)
             }

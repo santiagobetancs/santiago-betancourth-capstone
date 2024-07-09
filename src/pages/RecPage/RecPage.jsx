@@ -8,6 +8,9 @@ import React from "react";
 import BookCard from "../../components/BookCard/BookCard";
 
 export default function RecPage() {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   const [books, setBooks] = useState();
   const [click, setClick] = useState(false)
   const [rec, setRec] = useState(false)
@@ -15,7 +18,7 @@ export default function RecPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const result = await axios.get(
-      `${process.env.VITE_API_URL}/users/nyt/${e.target.list_name.value}`
+      `${baseURL}/users/nyt/${e.target.list_name.value}`
     );
     setBooks(result);
   };

@@ -5,6 +5,9 @@ import axios from "axios";
 import abel from "../../assets/images/abel.png";
 
 export default function ModalComponent({ openModal, setOpenModal, profile }) {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   if (!openModal) {
     return null;
   }
@@ -40,8 +43,8 @@ export default function ModalComponent({ openModal, setOpenModal, profile }) {
   const onSubmit = async (e) => {
     try {
       e.preventDefault();
-      await axios.put(`${process.env.VITE_API_URL}/users/indiv/${id}`, user);
-      await axios.put(`${process.env.VITE_API_URL}/users/books/${id}`, {
+      await axios.put(`${baseURL}/users/indiv/${id}`, user);
+      await axios.put(`${baseURL}/users/books/${id}`, {
         username: user.username
       })
       navigate(`/profile/${user.username}`);

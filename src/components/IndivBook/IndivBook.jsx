@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import './IndivBook.scss'
+import './IndivBook.scss';
+
+const baseURL = import.meta.env.VITE_API_URL
 
 export default function IndivBook({
   title,
@@ -27,7 +29,7 @@ export default function IndivBook({
       try {
         if (remove === true) {
           await axios.delete(
-            `${process.env.VITE_API_URL}/users/books/${title}?user=${id}`
+            `${baseURL}/users/books/${title}?user=${id}`
           );
           setRemove(false);
         }

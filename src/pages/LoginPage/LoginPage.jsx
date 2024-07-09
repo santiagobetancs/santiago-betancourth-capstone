@@ -7,6 +7,9 @@ import "./LoginPage.scss";
 import axios from "axios";
 
 export default function LoginPage() {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -31,7 +34,7 @@ export default function LoginPage() {
     try {
       e.preventDefault();
       const result = await axios.post(
-        `${process.env.VITE_API_URL}/users/login`,
+        `${baseURL}/users/login`,
         user
       );
       if (result) {

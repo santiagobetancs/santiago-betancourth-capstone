@@ -10,6 +10,9 @@ import IndivBook from "../../components/IndivBook/IndivBook";
 import edit from '../../assets/images/edit.png';
 
 export default function ProfilePage() {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   const { id } = useParams();
   const [profile, setProfile] = useState({ data: [] });
   const [books, setBooks] = useState({ data: [] });
@@ -21,7 +24,7 @@ export default function ProfilePage() {
     try {
       const getProfile = async () => {
         const result = await axios.get(
-          `${process.env.VITE_API_URL}/users/indiv/${id}`
+          `${baseURL}/users/indiv/${id}`
         );
         setProfile(result.data);
       };
@@ -33,7 +36,7 @@ export default function ProfilePage() {
     try {
       const getBooks = async () => {
         const result = await axios.get(
-          `${process.env.VITE_API_URL}/users/books/${id}`
+          `${baseURL}/users/books/${id}`
         );
         setBooks(result);
       };

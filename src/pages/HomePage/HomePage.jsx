@@ -8,6 +8,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
+
+  const baseURL = import.meta.env.VITE_API_URL
+
   const [data, setData] = useState();
   const { id } = useParams();
   const token = sessionStorage.getItem("token");
@@ -15,7 +18,7 @@ export default function HomePage() {
   useEffect(() => {
     async function getProfile() {
       const result = await axios.get(
-        `${process.env.VITE_API_URL}/users/profile/${id}`,
+        `${baseURL}/users/profile/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
