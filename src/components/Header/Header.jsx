@@ -41,7 +41,7 @@ export default function Header() {
             <h6 className="header__text">
               Home
             </h6>
-            <img className="header__drop" src={orange} alt=">" />
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
           </Link>
           <Link to='/aboutus' className="header__link">
@@ -49,7 +49,7 @@ export default function Header() {
             <h6 className="header__text">
               About Us
             </h6>
-            <img className="header__drop" src={orange} alt=">" />
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
           </Link>
           <Link to='/aboutus' className="header__link">
@@ -57,7 +57,7 @@ export default function Header() {
             <h6 className="header__text">
               Contact
             </h6>
-            <img className="header__drop" src={orange} alt=">" />
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
           </Link>
         </section>

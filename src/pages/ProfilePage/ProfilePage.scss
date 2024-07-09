@@ -74,6 +74,10 @@
         &--true {
             display: none;
         }
+
+        &:hover {
+            background-color: #b35500;
+        }
     }
 
     &__less {
@@ -107,6 +111,12 @@
         border-radius: 2rem;
         margin-top: 0.5rem;
         cursor: pointer;
+
+        &:hover {
+            background-color: $orange;
+            border: 1px solid $orange;
+            color: white;
+        }
     }
 
     &__pencil {

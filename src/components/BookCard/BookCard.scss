@@ -39,6 +39,12 @@
         &--none {
             display: none;
         }
+
+        &:hover {
+            background-color: $orange;
+            color: white;
+            border: none;
+        }
     }
 
     &__block {
@@ -58,8 +64,17 @@
         width: 2rem;
         cursor: pointer;
 
+        &:hover {
+            width: 2.25rem;
+        }
+
         &--none {
             display: none;
+        }
+
+        &--black {
+            height: 3rem;
+            color: red;
         }
     }
 

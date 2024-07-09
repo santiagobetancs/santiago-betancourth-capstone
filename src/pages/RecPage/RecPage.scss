@@ -38,6 +38,7 @@
         padding: 1rem 1rem;
         border-radius: 2rem;
         border: 0.5px solid $brown;
+        -webkit-appearance: none;
     }
 
     &__button {
@@ -50,6 +51,12 @@
 
         &--none {
             display: none;
+        }
+
+        &:hover {
+            background-color: #b35500;
+            // color: black;
+            border: 0.5px solid $brown;
         }
     }
 

@@ -35,7 +35,7 @@ export default function RecPage() {
                 className="rec__option rec__option--placeholder"
                 defaultValue
               >
-                Select a Category
+                Select a Category 
               </option>
               {categories.map((cat) => {
                 const { list_name, list_name_encoded } = cat;

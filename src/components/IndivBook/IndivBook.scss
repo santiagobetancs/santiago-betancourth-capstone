@@ -62,6 +62,11 @@
         &--less {
             display: none;
         }
+
+        &:hover {
+            background-color: $orange;
+            color: white;
+        }
     }
 
     &__buttons {

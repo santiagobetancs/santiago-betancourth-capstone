@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import heart from "../../assets/images/heart.webp";
 import axios from "axios";
 import del from '../../assets/images/delete.webp'
+import { FaHeart } from "react-icons/fa";
 
 const baseURL = import.meta.env.VITE_API_URL
 
@@ -106,7 +107,7 @@ export default function BookCard({
             Less
           </h4>
         <img onClick={onLike} className={liked === false ? "rec__heart" : "rec__heart rec__heart--none"} src={heart} alt="heart" />
-        <img onClick={removeLike} className={(liked === false) ? `rec__heart rec__heart--none` : `rec__heart`} src={del} alt="delete" />
+        <FaHeart onClick={removeLike} className={(liked === false) ? `rec__heart rec__heart--none` : `rec__heart rec__heart--black`} />
       </div>
 
       {cmore && (
