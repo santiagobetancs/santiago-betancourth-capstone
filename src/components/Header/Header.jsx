@@ -35,7 +35,7 @@ export default function Header() {
             </div>
           </div>
         </section>
-        <section className={id ? "header__container header__container--bottom" : "header__container--none"}>
+        <section className={id ? "header__container header__container--bottom header__container--two" : "header__container--none"}>
           <Link to={`/home/${id}`} className="header__link">
           <div className={"header__option"}>
             <h6 className="header__text">
