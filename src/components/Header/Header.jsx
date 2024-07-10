@@ -44,10 +44,18 @@ export default function Header() {
             {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
           </Link>
-          <Link to='/aboutus' className="header__link">
+          <Link to={`/profile/${id}`} className="header__link">
           <div className="header__option">
             <h6 className="header__text">
-              About Us
+              Profile
+            </h6>
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
+          </div>
+          </Link>
+          <Link to={`/recommendations/${id}`} className="header__link">
+          <div className="header__option">
+            <h6 className="header__text">
+              Recommendations
             </h6>
             {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
@@ -55,7 +63,7 @@ export default function Header() {
           <Link to='/aboutus' className="header__link">
           <div className="header__option">
             <h6 className="header__text">
-              Contact
+              About Us
             </h6>
             {/* <img className="header__drop" src={orange} alt=">" /> */}
           </div>
