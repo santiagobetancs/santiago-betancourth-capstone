@@ -35,9 +35,35 @@ export default function Header() {
             </div>
           </div>
         </section>
-        <section className="header__container header__container--bottom">
+        <section className={id ? "header__container header__container--bottom" : "header__container--none"}>
           <Link to={`/home/${id}`} className="header__link">
+          <div className={"header__option"}>
+            <h6 className="header__text">
+              Home
+            </h6>
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
+          </div>
+          </Link>
+          <Link to='/aboutus' className="header__link">
           <div className="header__option">
+            <h6 className="header__text">
+              About Us
+            </h6>
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
+          </div>
+          </Link>
+          <Link to='/aboutus' className="header__link">
+          <div className="header__option">
+            <h6 className="header__text">
+              Contact
+            </h6>
+            {/* <img className="header__drop" src={orange} alt=">" /> */}
+          </div>
+          </Link>
+        </section>
+        <section className={!id ? "header__container header__container--bottom" : "header__container--none"}>
+          <Link to={`/`} className="header__link">
+          <div className={"header__option"}>
             <h6 className="header__text">
               Home
             </h6>
