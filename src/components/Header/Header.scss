@@ -5,86 +5,130 @@
 @use '../../styles/partials/variables' as *;
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+    // @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    // }
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5rem 2rem;
-        width: 100%;
+
+        // @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            width: 100%;        
+        // }
 
         &--top {
-            border-bottom: 1px solid lightgray;
+            // @include tablet {
+                border-bottom: 1px solid lightgray;
+            // }
         }
 
         &--bottom {
-            width: 25%;
+            @include tablet {
+                width: 50%;
+            }
+
+            @include desktop {
+                width: 30%;
+            }
         }
     }
 
     &__box {
-        display: flex;
-        gap: 0.5rem;
+        // @include tablet {
+            display: flex;
+            gap: 0.5rem;
+        // }
 
         &--right {
-            gap: 1.75rem;
+            // @include tablet {
+                gap: 1.75rem;
+            // }
         }
     }
 
     &__logo {
-        width: 2.5rem;
+        // @include tablet {
+            width: 2.5rem;
+        // }
     }
 
     &__title {
-        color: $brown;
-        font-size: 1.5rem;
-        font-weight: 500;
+        // @include tablet {
+            color: $brown;
+            font-size: 1.5rem;
+            font-weight: 500;
+        // }
     }
 
     &__link {
-        text-decoration: none;
+        // @include tablet {
+            text-decoration: none;
+        // }
     }
 
     &__button {
-        color: $white;
-        background-color: $orange;
-        padding: 0.25rem  1rem;
-        border-radius: 16px;
-        font-weight: 400;
+        // @include tablet {
+            display: none;
+            @include tablet {
+                display: flex;
+                color: $white;
+                background-color: $orange;
+                padding: 0.25rem  1rem;
+                border-radius: 16px;
+                font-weight: 400;
+            }
+        // }
     }
 
     &__social {
-        display: flex;
-        align-items: center;
+        // @include tablet {
+            display: flex;
+            align-items: center;
+        // }
     }
 
     &__media {
-        width: 1.5rem;
+        // @include tablet {
+            width: 1.5rem;
+        // }
 
         &--twitter {
-            width: 2.5rem;
+            // @include tablet {
+                width: 2.5rem;
+            // }
         }
 
         &--linkedin {
-            width: 1.6rem;
+            // @include tablet {
+                width: 1.6rem;
+            // }
         }
     }
 
     &__option {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+        // @include tablet {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        // }
     }
 
     &__text {
-        color: $brown;
-        font-weight: 500;
-        font-size: 1rem;
+        // @include tablet {
+            color: $brown;
+            font-weight: 500;
+            font-size: 1rem;
+        // }
     }
 
     &__drop {
-        width: 0.5rem;
+        // @include tablet {
+            width: 0.5rem;
+        // }
     }
 }

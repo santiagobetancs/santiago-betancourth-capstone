@@ -5,8 +5,23 @@ import Footer from "../../components/Footer/Footer";
 import bookcase from "../../assets/images/bookcase.jpg";
 import logo from "../../assets/images/StoryTime.png";
 import copperhead from "../../assets/images/copperhead.jpg";
+import { useEffect, useState } from "react";
 
 export default function WelcomePage() {
+
+  const [tablet, setTablet] = useState()
+
+  useEffect(() => {
+    if (window.screen.width >= 1280) {
+      setTablet(true)
+    }
+    else setTablet(false)
+  }, [])
+
+  console.log(tablet)
+
+
+
   const booksArray = [
     {
       book_image:
@@ -129,7 +144,7 @@ export default function WelcomePage() {
           </div>
         </section>
         <section className="welcome__trending">
-          <div className="welcome__tagline">
+          <div className="welcome__tagline welcome__tagline--bottom">
             <h3 className="welcome__heading">Trending Now 🔥</h3>
             <hr className="welcome__line welcome__line--bottom" />
             <Link className="welcome__link" to="/login">
@@ -138,7 +153,7 @@ export default function WelcomePage() {
           </div>
           <div className="welcome__recommends">
             <div className="welcome__books">
-              {highlightArray.map((book) => {
+              {highlightArray.slice(0, 4).map((book) => {
                 return (
                   <div className="welcome__book">
                     <img
@@ -147,6 +162,17 @@ export default function WelcomePage() {
                       alt="#"
                     />
                   </div>
+                )
+              })}
+              {tablet && highlightArray.slice(4, 8).map((book) => {
+                return (
+                  <div className="welcome__book">
+                  <img
+                    className="welcome__img"
+                    src={book.book_image}
+                    alt="#"
+                  />
+                </div>
                 )
               })}
             </div>

@@ -16,6 +16,15 @@
    &__hero {
     width: 50%;
     height: 100%;
+
+    @include tablet {
+        display: none;
+    }
+
+
+    @include desktop {
+        display: flex;
+    }
    }
 
    &__logo {
@@ -24,6 +33,14 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include desktop {
+        width: 50%;
+    }
    }
 
    &__image {
@@ -51,12 +68,39 @@
     margin-bottom: 1rem;
     align-items: center;
     justify-content: space-evenly;
+
+    @include tablet {
+        justify-content: space-between;
+        width: 75%;
+    }
+
+    @include desktop {
+        display: flex;
+        width: 80%;
+        gap: 10px;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &--bottom {
+        
+    }
    }
 
    &__heading {
     color: $brown;
     font-size: 24px;
     font-weight: 500;
+
+    @include tablet {
+        font-size: 1.25rem;
+        white-space: nowrap;
+    }
+
+    @include desktop {
+        font-size: 24px;
+    }
    }
 
    &__button {
@@ -75,6 +119,14 @@
 
    &__line {
     width: 35%;
+
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: flex;
+    }
 
     &--bottom {
         width: 60%;
@@ -102,6 +154,13 @@
    &__mage {
     width: 80%;
     border-radius: 1rem;
+
+    @include tablet {
+        width: 75%;
+    }
+    @include desktop {
+        width: 80%;
+    }
    }
 
    &__trending {
@@ -145,11 +204,11 @@
    }
 
    &__white {
-    background-color: white;
-    display: flex;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    gap: 20px;
+        background-color: white;
+        display: flex;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        gap: 20px;
    }
 
    &__i {
@@ -175,5 +234,13 @@
    &__description {
     font-size: 0.5rem;
     font-weight: 400;
+
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: flex;
+    }
    }
 }
