@@ -1,67 +1,67 @@
-@use '../../styles/partials/fonts' as *;
-@use '../../styles/partials/global' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/resets' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/variables" as *;
 
 .welcome {
-   padding: 0 2rem; 
+  padding: 0 2rem;
 
-   &__banner {
+  &__banner {
     background-color: $light-copper;
     display: flex;
     height: 360px;
-   }
+  }
 
-   &__hero {
+  &__hero {
     width: 50%;
     height: 100%;
+    display: none;
 
     @include tablet {
-        display: none;
+      display: none;
     }
-
 
     @include desktop {
-        display: flex;
+      display: flex;
     }
-   }
+  }
 
-   &__logo {
+  &__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
 
     @include tablet {
-        width: 100%;
+      width: 100%;
     }
 
     @include desktop {
-        width: 50%;
+      width: 50%;
     }
-   }
+  }
 
-   &__image {
+  &__image {
     width: 160px;
-   }
+  }
 
-   &__title {
+  &__title {
     color: $brown;
     font-weight: 500;
     font-size: 24px;
-   }
+  }
 
-   &__carousel {
+  &__carousel {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
-   }
+  }
 
-   &__tagline {
+  &__tagline {
     display: flex;
     width: 80%;
     gap: 10px;
@@ -70,40 +70,36 @@
     justify-content: space-evenly;
 
     @include tablet {
-        justify-content: space-between;
-        width: 75%;
+      justify-content: space-between;
+      width: 75%;
     }
 
     @include desktop {
-        display: flex;
-        width: 80%;
-        gap: 10px;
-        margin-bottom: 1rem;
-        align-items: center;
-        justify-content: space-evenly;
+      display: flex;
+      width: 80%;
+      gap: 10px;
+      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: space-evenly;
     }
+  }
 
-    &--bottom {
-        
-    }
-   }
-
-   &__heading {
+  &__heading {
     color: $brown;
-    font-size: 24px;
+    font-size: 12px;
     font-weight: 500;
 
     @include tablet {
-        font-size: 1.25rem;
-        white-space: nowrap;
+      font-size: 1.25rem;
+      white-space: nowrap;
     }
 
     @include desktop {
-        font-size: 24px;
+      font-size: 24px;
     }
-   }
+  }
 
-   &__button {
+  &__button {
     display: flex;
     justify-content: center;
     color: white;
@@ -115,55 +111,63 @@
     overflow: hidden;
     font-size: 14px;
     width: 6rem;
-   }
+  }
 
-   &__line {
+  &__line {
     width: 35%;
+    display: none;
 
     @include tablet {
-        display: none;
+      display: none;
     }
 
     @include desktop {
-        display: flex;
+      display: flex;
     }
 
     &--bottom {
-        width: 60%;
+      width: 60%;
     }
-   }
+  }
 
-   &__link {
+  &__link {
     text-decoration: none;
-   }
+  }
 
-   &__slideshow {
+  &__slideshow {
     display: flex;
     overflow-x: scroll;
     width: 100%;
-   }
+  }
 
-   &__slide {
+  &__slide {
     display: flex;
     justify-content: center;
     border-right: 1px solid lightgray;
-    min-width: 250px;
-    padding: 0rem 0.25rem;
-   }
+    min-width: 170px;
 
-   &__mage {
-    width: 80%;
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      border-right: 1px solid lightgray;
+      min-width: 250px;
+      padding: 0rem 0.25rem;
+    }
+  }
+
+  &__mage {
+    width: 65%;
     border-radius: 1rem;
 
     @include tablet {
-        width: 75%;
+      width: 75%;
     }
     @include desktop {
-        width: 80%;
+      width: 80%;
     }
-   }
+  }
 
-   &__trending {
+  &__trending {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -171,76 +175,97 @@
     padding: 2rem 0;
     background-color: $light-copper;
     margin-bottom: 2rem;
-   }
+  }
 
-   &__fire {
+  &__fire {
     width: 3.5rem;
-   }
+  }
 
-   &__recommends {
+  &__recommends {
     display: flex;
     justify-content: center;
-   }
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
 
-   &__books {
+  &__books {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      width: 37.5%;
+    }
+  }
+
+  &__spotlight {
     display: flex;
-    flex-wrap: wrap;
-    width: 37.5%;
-   }
+    width: 75%;
+    @include tablet {
+      width: 37.5%;
+      background-color: white;
+    }
+  }
 
-   &__spotlight {
-    display: flex;
-    width: 37.5%;
-    background-color: white;
-   }
-
-   &__img {
+  &__img {
     width: 100px;
     border-radius: 0.25rem;
-   }
+  }
 
-   &__book {
+  &__book {
     padding: 0 0.25rem;
-   }
+  }
 
-   &__white {
-        background-color: white;
-        display: flex;
-        padding: 1rem;
-        border-radius: 0.25rem;
-        gap: 20px;
-   }
-
-   &__i {
-    width: 175px; 
+  &__white {
+    background-color: white;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
     border-radius: 0.25rem;
-   }
+    gap: 20px;
 
-   &__details {
+    @include tablet {
+      flex-direction: row;
+      padding: 1rem;
+    }
+  }
+
+  &__i {
+    width: 100px;
+
+    @include tablet {
+      width: 175px;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__details {
     display: flex;
     flex-direction: column;
     gap: 10px;
-   }
+  }
 
-   &__name {
-    font-size:0.75rem;
-   }
+  &__name {
+    font-size: 0.75rem;
+  }
 
-   &__author {
+  &__author {
     font-size: 0.5rem;
     font-weight: 500;
-   }
+  }
 
-   &__description {
+  &__description {
     font-size: 0.5rem;
     font-weight: 400;
 
     @include tablet {
-        display: none;
+      display: none;
     }
 
     @include desktop {
-        display: flex;
+      display: flex;
     }
-   }
+  }
 }
